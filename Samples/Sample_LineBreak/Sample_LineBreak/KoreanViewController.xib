@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KoreanViewController" customModule="Sample_LineBreak" customModuleProvider="target">
+            <connections>
+                <outlet property="hangulLabel" destination="BaS-A1-JWV" id="PVT-2h-1UR"/>
+                <outlet property="pushOutLabel" destination="JmW-RY-MeF" id="vgF-OA-2N6"/>
+                <outlet property="standardLabel" destination="Hcx-tv-dnN" id="SVf-sE-zVz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-pV-3H6">
+                    <rect key="frame" x="20" y="69" width="353" height="749"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".byWordWrapping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-Wa-MLn">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                            <color key="backgroundColor" red="0.2588235438" green="0.2588235438" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGc-NI-y9M">
+                            <rect key="frame" x="0.0" y="26.333333333333332" width="353" height="57.333333333333343"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".byCharWrapping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mut-w3-R3z">
+                            <rect key="frame" x="0.0" y="89.333333333333343" width="353" height="20.333333333333329"/>
+                            <color key="backgroundColor" red="0.2588235438" green="0.2588235438" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msF-Gz-MIV">
+                            <rect key="frame" x="0.0" y="115.66666666666664" width="353" height="57.333333333333329"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".byTruncatingTail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKX-g6-YZD">
+                            <rect key="frame" x="0.0" y="178.66666666666666" width="353" height="20.333333333333343"/>
+                            <color key="backgroundColor" red="0.2588235438" green="0.2588235438" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpQ-Qq-g7e">
+                            <rect key="frame" x="0.0" y="205" width="353" height="57.333333333333314"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".byTruncatingMiddle" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJi-0q-IGv">
+                            <rect key="frame" x="0.0" y="268" width="353" height="20.333333333333314"/>
+                            <color key="backgroundColor" red="0.2588235438" green="0.2588235438" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUu-Ih-7Gx">
+                            <rect key="frame" x="0.0" y="294.33333333333331" width="353" height="57.333333333333314"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".byClipping" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSO-ue-BaW">
+                            <rect key="frame" x="0.0" y="357.33333333333331" width="353" height="20.333333333333314"/>
+                            <color key="backgroundColor" red="0.2588235438" green="0.2588235438" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82c-SH-Jj1">
+                            <rect key="frame" x="0.0" y="383.66666666666669" width="353" height="57.333333333333314"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".hangulWordPriority" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ3-ne-aEx">
+                            <rect key="frame" x="0.0" y="446.66666666666663" width="353" height="20.333333333333314"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaS-A1-JWV">
+                            <rect key="frame" x="0.0" y="473" width="353" height="57.333333333333371"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".pushOut" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9y-52-6Ty">
+                            <rect key="frame" x="0.0" y="536" width="353" height="20.333333333333371"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmW-RY-MeF">
+                            <rect key="frame" x="0.0" y="562.33333333333337" width="353" height="57.333333333333371"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".standard" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8d-Ht-P5v">
+                            <rect key="frame" x="0.0" y="625.33333333333337" width="353" height="20.333333333333371"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-tv-dnN">
+                            <rect key="frame" x="0.0" y="651.66666666666663" width="353" height="57.333333333333371"/>
+                            <string key="text">이 프로퍼티는 줄임표(…)로 잘라내거나 텍스트를 크으으을리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 이 속성은 줄임표(…)로 잘라내거나 텍스트를 클리핑하는 등 텍스트 시스템이 해당 컨테이너에 맞지 않는 줄을 배치하는 방법을 제어합니다. 하하.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-8t-ziz">
+                            <rect key="frame" x="0.0" y="714.66666666666663" width="353" height="34.333333333333371"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" image="arrow.right" catalog="system">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Custom">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="NanumGothicExtraBold"/>
+                                            <font key="NSOriginalFont" size="16" name="NanumGothicExtraBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="NanumGothic"/>
+                                            <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Label ">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="NanumGothicExtraBold"/>
+                                            <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="확인">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="NanumGothicExtraBold"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="baseBackgroundColor" red="0.97790404040000001" green="0.61974302650000002" blue="0.2248283116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="customBtnTapped:" destination="-1" eventType="touchUpInside" id="aiA-h2-y5k"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="QDh-pV-3H6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0jY-ey-qr7"/>
+                <constraint firstItem="QDh-pV-3H6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="EvY-m3-Fvv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QDh-pV-3H6" secondAttribute="bottom" id="nCx-ma-oSv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="QDh-pV-3H6" secondAttribute="top" constant="-10" id="rfh-Yi-Zk9"/>
+            </constraints>
+            <point key="canvasLocation" x="60" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
