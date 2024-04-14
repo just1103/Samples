@@ -21,8 +21,27 @@ final class HomeBottomSheetView: UIView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.isUserInteractionEnabled = true
-        view.image = UIImage(systemName: "plus")
+        view.loadCachedImage(of: "https://www.donanimhaber.com/images/images/haber/176228/src_340x1912x3-body-problem-zirvedeki-yerini-koruyor.jpg")
         return view
+    }()
+    
+    private lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 25.0 / 2.0
+        button.backgroundColor = .black.withAlphaComponent(0.5)
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "multiply"), for: .normal)
+        button.addAction(UIAction { [weak self] _ in self?.close() }, for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var todayButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Don’t show this again today", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16)
+//        button.addAction(UIAction { [weak self] _ in self?.closeToday() }, for: .touchUpInside) // 생략
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -63,6 +82,19 @@ final class HomeBottomSheetView: UIView {
         imageView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(snp.width)
+        }
+        
+        addSubview(closeButton)
+        closeButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalTo(contentView.snp.top).offset(-10)
+            make.width.height.equalTo(25)
+        }
+        
+        addSubview(todayButton)
+        todayButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.centerY.equalTo(closeButton)
         }
     }
     

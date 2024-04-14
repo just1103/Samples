@@ -20,6 +20,7 @@
 		1BD743B62BCBD8A000AD9EB3 /* HomeBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD743B52BCBD8A000AD9EB3 /* HomeBottomSheetView.swift */; };
 		1BD743B92BCBD9A600AD9EB3 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD743B82BCBD9A600AD9EB3 /* UIView+.swift */; };
 		1BD743BB2BCBD9F900AD9EB3 /* CodeOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD743BA2BCBD9F900AD9EB3 /* CodeOnlyViewController.swift */; };
+		1BD743BD2BCBE05E00AD9EB3 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD743BC2BCBE05E00AD9EB3 /* UIImageView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1BD743B52BCBD8A000AD9EB3 /* HomeBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomSheetView.swift; sourceTree = "<group>"; };
 		1BD743B82BCBD9A600AD9EB3 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1BD743BA2BCBD9F900AD9EB3 /* CodeOnlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOnlyViewController.swift; sourceTree = "<group>"; };
+		1BD743BC2BCBE05E00AD9EB3 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD743B82BCBD9A600AD9EB3 /* UIView+.swift */,
+				1BD743BC2BCBE05E00AD9EB3 /* UIImageView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				1BD743B62BCBD8A000AD9EB3 /* HomeBottomSheetView.swift in Sources */,
 				1BD743BB2BCBD9F900AD9EB3 /* CodeOnlyViewController.swift in Sources */,
 				1BD743B02BCBD43400AD9EB3 /* SecondViewController.swift in Sources */,
+				1BD743BD2BCBE05E00AD9EB3 /* UIImageView+.swift in Sources */,
 				1BB5DC302BCBA9210053FA99 /* MainViewController.swift in Sources */,
 				1BB5DC2C2BCBA9210053FA99 /* AppDelegate.swift in Sources */,
 				1BB5DC2E2BCBA9210053FA99 /* SceneDelegate.swift in Sources */,
