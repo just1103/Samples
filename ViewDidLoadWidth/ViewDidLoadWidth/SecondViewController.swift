@@ -18,9 +18,22 @@ class SecondViewController: UIViewController {
 //        showBottomSheet()
     }
     
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        print("viewIsAppearing ...", view.frame.size.width)
+//        showBottomSheet()
+    }
+    
+    // 주의 - 여러 번 호출될 수 있음
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         print("viewDidLayoutSubviews ...", view.frame.size.width)
+//        showBottomSheet()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear ...", view.frame.size.width)
 //        showBottomSheet()
     }
 
