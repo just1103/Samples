@@ -34,8 +34,8 @@ class SecondViewController: UIViewController {
         bottomSheetView.show()
         
         print("BottomSheet Width              ...", bottomSheetView.bounds.width)
-        print("BottomSheet contentView Width  ...", bottomSheetView.contentView.bounds.width)
-        print("BottomSheet contentView Height ...", bottomSheetView.contentView.bounds.height)
+        print("BottomSheet contentView Width  ...", bottomSheetView.imageView.bounds.width)
+        print("BottomSheet contentView Height ...", bottomSheetView.imageView.bounds.height)
     }
     
 }

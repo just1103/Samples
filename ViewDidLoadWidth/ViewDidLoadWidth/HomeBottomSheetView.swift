@@ -9,18 +9,12 @@ final class HomeBottomSheetView: UIView {
         view.alpha = 0
         return view
     }()
-    
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    private lazy var imageView: UIImageView = {
+
+    lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.isUserInteractionEnabled = true
+        view.backgroundColor = .white
+        view.clipsToBounds = true
         view.loadCachedImage(of: "https://www.donanimhaber.com/images/images/haber/176228/src_340x1912x3-body-problem-zirvedeki-yerini-koruyor.jpg")
         return view
     }()
@@ -60,7 +54,7 @@ final class HomeBottomSheetView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.addRoundCorner(corners: [.topLeft, .topRight], radii: 16.0)
+        imageView.addRoundCorner(corners: [.topLeft, .topRight], radii: 16.0)
     }
     
     private func layout() {
@@ -71,23 +65,17 @@ final class HomeBottomSheetView: UIView {
             make.edges.equalToSuperview()
         }
         
-        addSubview(contentView)
-        contentView.snp.makeConstraints { make in
+        addSubview(imageView)
+        imageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(snp.bottom)
-            make.height.equalTo(snp.width)
-        }
-        
-        contentView.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(snp.width)
         }
         
         addSubview(closeButton)
         closeButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(contentView.snp.top).offset(-10)
+            make.bottom.equalTo(imageView.snp.top).offset(-10)
             make.width.height.equalTo(25)
         }
         
@@ -98,8 +86,8 @@ final class HomeBottomSheetView: UIView {
         }
     }
     
-    private func setContentView(offsetY: CGFloat) {
-        contentView.snp.updateConstraints { make in
+    private func setImageViewOffsetY(to offsetY: CGFloat) {
+        imageView.snp.updateConstraints { make in
             make.top.equalTo(snp.bottom).offset(offsetY)
         }
         layoutIfNeeded()
@@ -111,14 +99,14 @@ final class HomeBottomSheetView: UIView {
 
         UIView.animate(withDuration: 0.25) {
             self.dimView.alpha = 1
-            self.setContentView(offsetY: -self.contentView.bounds.size.height)
+            self.setImageViewOffsetY(to: -self.imageView.bounds.size.height)
         }
     }
     
     func close() {
         UIView.animate(withDuration: 0.25) {
             self.dimView.alpha = 0
-            self.setContentView(offsetY: 0)
+            self.setImageViewOffsetY(to: 0)
         } completion: { [weak self] _ in
             self?.removeFromSuperview()
         }
