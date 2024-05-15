@@ -90,7 +90,7 @@ final class HomeBottomSheetView: UIView {
         imageView.snp.updateConstraints { make in
             make.top.equalTo(snp.bottom).offset(offsetY)
         }
-        layoutIfNeeded()
+        layoutIfNeeded() // 이거 없으면 바텀시트 내려갈 때 - 오늘안보기가 살짝 남았다가 없어짐...
     }
 
     // MARK: - Public
