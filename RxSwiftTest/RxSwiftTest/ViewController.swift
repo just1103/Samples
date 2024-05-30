@@ -16,6 +16,15 @@ class ViewController: UIViewController {
     var num1 = 0
     var num2 = 0
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        test()
+        layout()
+        
+        testDefer()
+    }
+    
     private func test() {
         stream1
             .subscribe(onNext: { num in
@@ -102,10 +111,27 @@ class ViewController: UIViewController {
         ])
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Deferred
+    private func testDefer() {
+        var isActive: Bool = false
         
-        test()
-        layout()
+        let factory: Observable<String> = Observable.deferred {
+            print("@@@ deferred")
+            isActive = !isActive
+            
+            if isActive {
+                return Observable.of("🤟")
+            } else {
+                return Observable.of("👌")
+            }
+        }
+        
+        for _ in 0...3 {
+            factory.subscribe(onNext: {
+                print("@@@ subscribe")
+                print($0)
+            })
+            .disposed(by: bag)
+        }
     }
 }
