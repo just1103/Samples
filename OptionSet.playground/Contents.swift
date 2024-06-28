@@ -13,8 +13,9 @@ struct BorderOptions: OptionSet {
     // 3
     // 선택지를 만들 때는 static 프로퍼티로 정의함
     // 각각의 rawValue를 설정할 때는 2의 제곱을 넣어줌 (ex. 1, 2, 4, 8, 16)
-    static let top = BorderOptions(rawValue: 1 << 0)    // 1 << 0 == 1
-    static let left = BorderOptions(rawValue: 1 << 1)   // 1 << 1 == 2
+    // *<< : 왼쪽 시프트 연산자
+    static let top = BorderOptions(rawValue: 1 << 0)    // 1 << 0 == 1 (1을 0비트만큼 왼쪽으로 이동시킴. 즉, 변하지 않아서 1)
+    static let left = BorderOptions(rawValue: 1 << 1)   // 1 << 1 == 2 (1을 1비트만큼 왼쪽으로 이동시킴. 즉, 2진수로 10이 되어 10진수로 2)
     static let right = BorderOptions(rawValue: 1 << 2)  // 1 << 2 == 4
     static let bottom = BorderOptions(rawValue: 1 << 3) // 1 << 3 == 8
 //    static let bottom = BorderOptions(rawValue: 1 << 0) // test (빌드 에러 안남)
