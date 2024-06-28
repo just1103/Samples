@@ -41,4 +41,6 @@ options.contains(.bottom) // true
 options.contains(.left)   // false
 options.contains(.right)  // false
 
-print(options) // BorderOptions(rawValue: 9)
+print(options) 
+// BorderOptions(rawValue: 9)
+// top(1) + bottom(8) 이라서
