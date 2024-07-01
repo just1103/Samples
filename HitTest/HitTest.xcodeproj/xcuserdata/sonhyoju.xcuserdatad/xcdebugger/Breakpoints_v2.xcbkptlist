@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B08CC761-7F0F-419B-9151-F0D0244BADDE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46864D22-7298-40A9-A78C-D9741DF948B9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HitTest/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "46864D22-7298-40A9-A78C-D9741DF948B9 - 62f3863520b1ac6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.TestButton1.__allocating_init(frame: __C.CGRect) -&gt; HitTest.TestButton1"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "46864D22-7298-40A9-A78C-D9741DF948B9 - cbe275ebe58b6db9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.TestButton1.init(frame: __C.CGRect) -&gt; HitTest.TestButton1"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "46864D22-7298-40A9-A78C-D9741DF948B9 - d3cb1bb832c897c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.TestButton1.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HitTest.TestButton1&gt;"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "46864D22-7298-40A9-A78C-D9741DF948B9 - fa9fc878b05cc915"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.TestButton1.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HitTest.TestButton1&gt;"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "46864D22-7298-40A9-A78C-D9741DF948B9 - 46e09484c2798ae0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.TestButton1.__deallocating_deinit"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "46864D22-7298-40A9-A78C-D9741DF948B9 - b92d992e43cb3e45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5A4D73C-7F79-433A-8E8B-FDBC6E2E1F38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HitTest/HitViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5A4D73C-7F79-433A-8E8B-FDBC6E2E1F38 - d71d5879bfa648b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.HitViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/HitViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "B5A4D73C-7F79-433A-8E8B-FDBC6E2E1F38 - d71d5879bfa6487a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HitTest.HitViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "HitTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sonhyoju/Documents/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5_Projects/iOS%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%84%83%E1%85%B5!/Sample_git/Samples/HitTest/HitTest/HitViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
