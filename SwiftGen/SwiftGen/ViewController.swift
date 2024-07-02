@@ -8,6 +8,10 @@ class ViewController: UIViewController {
         // Color
         view.backgroundColor = UIColor.customPurple
         
+        // Finder의 파일을 Xcode로 드래그앤드롭 하면 이렇게 쓸 수 있음
+        // 안하면 못찾음
+//        view.backgroundColor = Asset.Colors.customPurple.color
+        
         // Image
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -29,4 +33,3 @@ class ViewController: UIViewController {
 
 
 }
-

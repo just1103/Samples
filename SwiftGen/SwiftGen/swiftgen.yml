@@ -1,12 +1,18 @@
+input_dir:
+output_dir: SwiftGen/Constant/ # output 관리가 용이함
+
 strings:
   inputs: Resources/Base.lproj
   outputs:
     - templateName: structured-swift5
-      output: Generated/Strings.swift
+      output: Strings.swift
+      
 xcassets:
   inputs:
     - Resources/Images.xcassets
     - Resources/Colors.xcassets
   outputs:
     - templateName: swift5
-      output: Generated/Assets.swift
+      params:
+        forceProvidesNamespaces: true
+      output: Assets+Generated.swift
