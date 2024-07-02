@@ -15,4 +15,5 @@ xcassets:
     - templateName: swift5
       params:
         forceProvidesNamespaces: true
+        enumName: Test # Test.Colors.customPurple 형태로 지정 가능 
       output: Assets+Generated.swift
