@@ -56,15 +56,23 @@
 		1BC942952C32A98200A6A63C /* SwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				1BC942AA2C33AC2200A6A63C /* Resources */,
 				1BC942962C32A98200A6A63C /* AppDelegate.swift */,
 				1BC942982C32A98200A6A63C /* SceneDelegate.swift */,
 				1BC9429A2C32A98200A6A63C /* ViewController.swift */,
-				1BC9429C2C32A98200A6A63C /* Main.storyboard */,
-				1BC9429F2C32A98400A6A63C /* Assets.xcassets */,
-				1BC942A12C32A98400A6A63C /* LaunchScreen.storyboard */,
 				1BC942A42C32A98400A6A63C /* Info.plist */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		1BC942AA2C33AC2200A6A63C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BC9429C2C32A98200A6A63C /* Main.storyboard */,
+				1BC9429F2C32A98400A6A63C /* Assets.xcassets */,
+				1BC942A12C32A98400A6A63C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
