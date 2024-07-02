@@ -11,8 +11,9 @@
 		1BC942992C32A98200A6A63C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC942982C32A98200A6A63C /* SceneDelegate.swift */; };
 		1BC9429B2C32A98200A6A63C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9429A2C32A98200A6A63C /* ViewController.swift */; };
 		1BC9429E2C32A98200A6A63C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9429D2C32A98200A6A63C /* Base */; };
-		1BC942A02C32A98400A6A63C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9429F2C32A98400A6A63C /* Assets.xcassets */; };
+		1BC942A02C32A98400A6A63C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9429F2C32A98400A6A63C /* Images.xcassets */; };
 		1BC942A32C32A98400A6A63C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1BC942A22C32A98400A6A63C /* Base */; };
+		1BC942AD2C33AD3B00A6A63C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC942AC2C33AD3B00A6A63C /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +22,10 @@
 		1BC942982C32A98200A6A63C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1BC9429A2C32A98200A6A63C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BC9429D2C32A98200A6A63C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1BC9429F2C32A98400A6A63C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BC9429F2C32A98400A6A63C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1BC942A22C32A98400A6A63C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BC942A42C32A98400A6A63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC942AC2C33AD3B00A6A63C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				1BC9429C2C32A98200A6A63C /* Main.storyboard */,
-				1BC9429F2C32A98400A6A63C /* Assets.xcassets */,
+				1BC9429F2C32A98400A6A63C /* Images.xcassets */,
 				1BC942A12C32A98400A6A63C /* LaunchScreen.storyboard */,
+				1BC942AC2C33AD3B00A6A63C /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -133,7 +136,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC942A02C32A98400A6A63C /* Assets.xcassets in Resources */,
+				1BC942A02C32A98400A6A63C /* Images.xcassets in Resources */,
+				1BC942AD2C33AD3B00A6A63C /* Colors.xcassets in Resources */,
 				1BC942A32C32A98400A6A63C /* Base in Resources */,
 				1BC9429E2C32A98200A6A63C /* Base in Resources */,
 			);

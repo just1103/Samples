@@ -6,7 +6,6 @@ strings:
 xcassets:
   inputs:
     - Resources/Images.xcassets
-    - Resources/MoreImages.xcassets
     - Resources/Colors.xcassets
   outputs:
     - templateName: swift5
