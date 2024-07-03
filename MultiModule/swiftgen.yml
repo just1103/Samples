@@ -1,16 +1,11 @@
 input_dir:
-output_dir: SwiftGen/Constant/ # output 관리가 용이함
+output_dir: ModuleA/ModuleA/SwiftGen/Constant/ # output 관리가 용이함, 직접 생성해야함, 공통모듈 하나에 모아야함. 그리고 접근제어자 열어주고
 
-strings:
-  inputs: Resources/Base.lproj
-  outputs:
-    - templateName: structured-swift5
-      output: Strings.swift
-      
 xcassets:
   inputs:
-    - Resources/Images.xcassets
-    - Resources/Colors.xcassets
+    - ModuleA/ModuleA/Resources/Images.xcassets
+    - ModuleB/ModuleB/Resources/Images.xcassets
+    - ModuleC/ModuleC/Resources/Images.xcassets
   outputs:
     - templateName: swift5
       params:
