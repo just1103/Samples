@@ -56,6 +56,7 @@
 		1BF4306C2C352C5100BD8F13 /* ModuleB */ = {
 			isa = PBXGroup;
 			children = (
+				1BF430A92C3535F800BD8F13 /* SwiftGen */,
 				1BF430A22C352EE100BD8F13 /* Resources */,
 				1BF4306D2C352C5100BD8F13 /* AppDelegate.swift */,
 				1BF4306F2C352C5100BD8F13 /* SceneDelegate.swift */,
@@ -73,6 +74,13 @@
 				1BF430762C352C5300BD8F13 /* Images.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BF430A92C3535F800BD8F13 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

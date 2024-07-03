@@ -1,14 +1,28 @@
-input_dir:
-output_dir: ModuleA/ModuleA/SwiftGen/Constant/ # output 관리가 용이함, 직접 생성해야함, 공통모듈 하나에 모아야함. 그리고 접근제어자 열어주고
+# input_dir:
+# output_dir: ModuleA/ModuleA/SwiftGen/Constant/ # output 관리가 용이함, 직접 생성해야함, 공통모듈 하나에 모아야함. 그리고 접근제어자 열어주고
 
 xcassets:
-  inputs:
-    - ModuleA/ModuleA/Resources/Images.xcassets
-    - ModuleB/ModuleB/Resources/Images.xcassets
-    - ModuleC/ModuleC/Resources/Images.xcassets
-  outputs:
+  - inputs: ModuleA/ModuleA/Resources/Images.xcassets
+    outputs:
     - templateName: swift5
-      params:
+      param:
+        enumName: Common
         forceProvidesNamespaces: true
-        enumName: Test # Test.Colors.customPurple 형태로 지정 가능
-      output: Assets+Generated.swift
+        publicAccess: true # 접근 제어자 열기
+      output: ModuleA/ModuleA/SwiftGen/Assets+Generated.swift
+  - inputs: ModuleB/ModuleB/Resources/Images.xcassets
+    outputs:
+    - templateName: swift5
+      param:
+        enumName: Common
+        forceProvidesNamespaces: true
+        publicAccess: true # 접근 제어자 열기
+      output: ModuleB/ModuleB/SwiftGen/Assets+Generated.swift
+  - inputs: ModuleC/ModuleC/Resources/Images.xcassets
+    outputs:
+    - templateName: swift5
+      param:
+        enumName: Common
+        forceProvidesNamespaces: true
+        publicAccess: true # 접근 제어자 열기
+      output: ModuleC/ModuleC/SwiftGen/Assets+Generated.swift

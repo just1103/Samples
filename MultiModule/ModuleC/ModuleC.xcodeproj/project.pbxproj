@@ -13,6 +13,7 @@
 		1BF430952C352C9100BD8F13 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1BF430942C352C9100BD8F13 /* Base */; };
 		1BF430972C352C9300BD8F13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF430962C352C9300BD8F13 /* Images.xcassets */; };
 		1BF4309A2C352C9300BD8F13 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1BF430992C352C9300BD8F13 /* Base */; };
+		1BF430AB2C3536BC00BD8F13 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF430AA2C3536BC00BD8F13 /* Assets+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1BF430962C352C9300BD8F13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1BF430992C352C9300BD8F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BF4309B2C352C9300BD8F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BF430AA2C3536BC00BD8F13 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		1BF4308C2C352C9100BD8F13 /* ModuleC */ = {
 			isa = PBXGroup;
 			children = (
+				1BF430A82C3535F200BD8F13 /* SwiftGen */,
 				1BF430A12C352ED800BD8F13 /* Resources */,
 				1BF4308D2C352C9100BD8F13 /* AppDelegate.swift */,
 				1BF4308F2C352C9100BD8F13 /* SceneDelegate.swift */,
@@ -73,6 +76,14 @@
 				1BF430962C352C9300BD8F13 /* Images.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BF430A82C3535F200BD8F13 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				1BF430AA2C3536BC00BD8F13 /* Assets+Generated.swift */,
+			);
+			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			files = (
 				1BF430922C352C9100BD8F13 /* ViewController.swift in Sources */,
 				1BF4308E2C352C9100BD8F13 /* AppDelegate.swift in Sources */,
+				1BF430AB2C3536BC00BD8F13 /* Assets+Generated.swift in Sources */,
 				1BF430902C352C9100BD8F13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
