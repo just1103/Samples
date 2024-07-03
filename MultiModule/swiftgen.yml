@@ -1,0 +1,19 @@
+input_dir:
+output_dir: SwiftGen/Constant/ # output 관리가 용이함
+
+strings:
+  inputs: Resources/Base.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Strings.swift
+      
+xcassets:
+  inputs:
+    - Resources/Images.xcassets
+    - Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+        enumName: Test # Test.Colors.customPurple 형태로 지정 가능
+      output: Assets+Generated.swift
