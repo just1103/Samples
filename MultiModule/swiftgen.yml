@@ -1,28 +1,67 @@
-# input_dir:
-# output_dir: ModuleA/ModuleA/SwiftGen/Constant/ # output 관리가 용이함, 직접 생성해야함, 공통모듈 하나에 모아야함. 그리고 접근제어자 열어주고
+input_dir:
+output_dir: ModuleA/ModuleA/SwiftGen/ # output 관리가 용이함, 직접 생성해야함, 공통모듈 하나에 모아야함. 그리고 접근제어자 열어주고
 
 xcassets:
-  - inputs: ModuleA/ModuleA/Resources/Images.xcassets
-    outputs:
+  paths:
+#    - **/Images.xcassets
+#     - ./Images.xcassets # 이게 되나? 안되는데
+#    - ../Resources/*.xcassets
+#    - **/Resources/*.xcassets
+#     - /dir/to/search/for/imageset/assets
+#
+#    - ModuleA/ModuleA/Resources # 이것도 가능. inputs를 아에 생략하는건 안되지만 최상위 폴더를 넣으면 될듯?
+#    - ModuleB/ModuleB/Resources
+#    - ModuleC/ModuleC/Resources
+
+     - ModuleA # 가능함
+     - ModuleB
+     - ModuleC
+#
+#    - ModuleA/ModuleA/Resources/Images.xcassets
+#    - ModuleA/ModuleA/Resources/Images3.xcassets
+#    - ModuleB/ModuleB/Resources/Images.xcassets
+#    - ModuleC/ModuleC/Resources/ImagesC.xcassets
+  outputs:
     - templateName: swift5
-      param:
-        enumName: Common
-        forceProvidesNamespaces: true
+      params:
         publicAccess: true # 접근 제어자 열기
-      output: ModuleA/ModuleA/SwiftGen/Assets+Generated.swift
-  - inputs: ModuleB/ModuleB/Resources/Images.xcassets
-    outputs:
-    - templateName: swift5
-      param:
-        enumName: Common
         forceProvidesNamespaces: true
-        publicAccess: true # 접근 제어자 열기
-      output: ModuleB/ModuleB/SwiftGen/Assets+Generated.swift
-  - inputs: ModuleC/ModuleC/Resources/Images.xcassets
-    outputs:
-    - templateName: swift5
-      param:
-        enumName: Common
-        forceProvidesNamespaces: true
-        publicAccess: true # 접근 제어자 열기
-      output: ModuleC/ModuleC/SwiftGen/Assets+Generated.swift
+#        enumName: Test # Test.Colors.customPurple 형태로 지정 가능
+      output: Assets+Generated.swift
+      
+#input_dir:
+#output_dir: ModuleA/ModuleA/SwiftGen/Integrated/ # output 관리가 용이함, 직접 생성해야함, 공통모듈 하나에 모아야함. 그리고 접근제어자 열어주고
+#
+#xcassets:
+#  - inputs: ModuleA/ModuleA/Resources/Images.xcassets
+#    outputs:
+#    - templateName: swift5
+#      params:
+#        publicAccess: true # 접근 제어자 열기
+##        forceProvidesNamespaces: true
+##        forceFileNameEnum: false
+##        enumName: Test # Test.Colors.customPurple 형태로 지정 가능 (없으면 default 네이밍 "Asset")
+##        assetNamePrefix: ModuleA # 안되는뎅
+#      output: Assets+GeneratedA.swift
+#      
+#  - inputs: ModuleB/ModuleB/Resources/Images.xcassets
+#    outputs:
+#    - templateName: swift5
+#      params:
+#        publicAccess: true # 접근 제어자 열기
+#        forceProvidesNamespaces: true
+#        forceFileNameEnum: false
+#        enumName: Test # Test.Colors.customPurple 형태로 지정 가능 (없으면 default 네이밍 "Asset")
+#        assetNamePrefix: ModuleB # 안되는뎅
+#      output: Assets+GeneratedB.swift
+#      
+#  - inputs: ModuleC/ModuleC/Resources/ImagesC.xcassets
+#    outputs:
+#    - templateName: swift5
+#      params:
+#        publicAccess: true # 접근 제어자 열기
+#        forceProvidesNamespaces: true
+#        forceFileNameEnum: false
+#        enumName: Test # Test.Colors.customPurple 형태로 지정 가능 (없으면 default 네이밍 "Asset")
+#        assetNamePrefix: ModuleC # 안되는뎅
+#      output: Assets+GeneratedC.swift
