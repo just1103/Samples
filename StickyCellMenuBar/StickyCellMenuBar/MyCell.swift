@@ -23,6 +23,8 @@ class MyCell: UICollectionViewCell {
     
     private func layout() {
         contentView.backgroundColor = .systemMint
+        contentView.layer.borderColor = UIColor.yellow.cgColor
+        contentView.layer.borderWidth = 1.0
         
         contentView.addSubview(label)
         label.snp.makeConstraints { make in

@@ -15,6 +15,7 @@
 		1B23633A2C45016F006DAE0F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1B2363392C45016F006DAE0F /* Base */; };
 		1B2363432C4501C2006DAE0F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2363422C4501C2006DAE0F /* SnapKit */; };
 		1B2363472C4508E4006DAE0F /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2363462C4508E4006DAE0F /* MyCell.swift */; };
+		1B2363492C452062006DAE0F /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2363482C452062006DAE0F /* CustomFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		1B2363392C45016F006DAE0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B23633B2C45016F006DAE0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B2363462C4508E4006DAE0F /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		1B2363482C452062006DAE0F /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1B23632D2C45016E006DAE0F /* AppDelegate.swift */,
 				1B23632F2C45016E006DAE0F /* SceneDelegate.swift */,
 				1B2363312C45016E006DAE0F /* ViewController.swift */,
+				1B2363482C452062006DAE0F /* CustomFlowLayout.swift */,
 				1B2363462C4508E4006DAE0F /* MyCell.swift */,
 				1B2363332C45016E006DAE0F /* Main.storyboard */,
 				1B2363362C45016F006DAE0F /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				1B2363322C45016E006DAE0F /* ViewController.swift in Sources */,
 				1B2363472C4508E4006DAE0F /* MyCell.swift in Sources */,
 				1B23632E2C45016E006DAE0F /* AppDelegate.swift in Sources */,
+				1B2363492C452062006DAE0F /* CustomFlowLayout.swift in Sources */,
 				1B2363302C45016E006DAE0F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
