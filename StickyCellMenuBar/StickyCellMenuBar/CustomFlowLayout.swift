@@ -28,6 +28,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
     }
     
     // 지정된 rect에 있는 모든 cell/view의 layout 특성을 반환
+    // 참고 - header/footer도 sticky하게 가능 (layoutAttributesForSupplementaryView)
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var layoutAttributes = super.layoutAttributesForElements(in: rect)
         
