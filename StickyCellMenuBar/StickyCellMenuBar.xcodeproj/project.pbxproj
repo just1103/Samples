@@ -17,7 +17,12 @@
 		1B2363472C4508E4006DAE0F /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2363462C4508E4006DAE0F /* MyCell.swift */; };
 		1B2363492C452062006DAE0F /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2363482C452062006DAE0F /* CustomFlowLayout.swift */; };
 		1B9883E72C464183008DA7AC /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883E62C464183008DA7AC /* MenuBar.swift */; };
-		1B9883E92C464C8C008DA7AC /* CustomCompLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883E82C464C8C008DA7AC /* CustomCompLayout.swift */; };
+		1B9883EB2C4672D3008DA7AC /* MyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883EA2C4672D3008DA7AC /* MyHeader.swift */; };
+		1B9883EE2C46772F008DA7AC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9883ED2C46772F008DA7AC /* RxCocoa */; };
+		1B9883F02C46772F008DA7AC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9883EF2C46772F008DA7AC /* RxRelay */; };
+		1B9883F22C46772F008DA7AC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9883F12C46772F008DA7AC /* RxSwift */; };
+		1B9883F52C4759AA008DA7AC /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883F42C4759AA008DA7AC /* PageCell.swift */; };
+		1B9883F82C476B55008DA7AC /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883F72C476B55008DA7AC /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +37,9 @@
 		1B2363462C4508E4006DAE0F /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		1B2363482C452062006DAE0F /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		1B9883E62C464183008DA7AC /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
-		1B9883E82C464C8C008DA7AC /* CustomCompLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCompLayout.swift; sourceTree = "<group>"; };
+		1B9883EA2C4672D3008DA7AC /* MyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeader.swift; sourceTree = "<group>"; };
+		1B9883F42C4759AA008DA7AC /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		1B9883F72C476B55008DA7AC /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9883F02C46772F008DA7AC /* RxRelay in Frameworks */,
+				1B9883EE2C46772F008DA7AC /* RxCocoa in Frameworks */,
+				1B9883F22C46772F008DA7AC /* RxSwift in Frameworks */,
 				1B2363432C4501C2006DAE0F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,9 +79,10 @@
 				1B9883E42C464108008DA7AC /* App */,
 				1B2363312C45016E006DAE0F /* ViewController.swift */,
 				1B2363482C452062006DAE0F /* CustomFlowLayout.swift */,
-				1B9883E82C464C8C008DA7AC /* CustomCompLayout.swift */,
 				1B2363462C4508E4006DAE0F /* MyCell.swift */,
+				1B9883F42C4759AA008DA7AC /* PageCell.swift */,
 				1B9883E52C46410E008DA7AC /* MenuBar */,
+				1B9883F62C476B4B008DA7AC /* Extension */,
 				1B9883E32C4640F9008DA7AC /* Resources */,
 				1B23633B2C45016F006DAE0F /* Info.plist */,
 			);
@@ -100,9 +111,18 @@
 		1B9883E52C46410E008DA7AC /* MenuBar */ = {
 			isa = PBXGroup;
 			children = (
+				1B9883EA2C4672D3008DA7AC /* MyHeader.swift */,
 				1B9883E62C464183008DA7AC /* MenuBar.swift */,
 			);
 			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		1B9883F62C476B4B008DA7AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1B9883F72C476B55008DA7AC /* Array+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +143,9 @@
 			name = StickyCellMenuBar;
 			packageProductDependencies = (
 				1B2363422C4501C2006DAE0F /* SnapKit */,
+				1B9883ED2C46772F008DA7AC /* RxCocoa */,
+				1B9883EF2C46772F008DA7AC /* RxRelay */,
+				1B9883F12C46772F008DA7AC /* RxSwift */,
 			);
 			productName = StickyCellMenuBar;
 			productReference = 1B23632A2C45016E006DAE0F /* StickyCellMenuBar.app */;
@@ -154,6 +177,7 @@
 			mainGroup = 1B2363212C45016E006DAE0F;
 			packageReferences = (
 				1B2363412C4501C2006DAE0F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1B9883EC2C46772F008DA7AC /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 1B23632B2C45016E006DAE0F /* Products */;
 			projectDirPath = "";
@@ -183,11 +207,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B2363322C45016E006DAE0F /* ViewController.swift in Sources */,
+				1B9883EB2C4672D3008DA7AC /* MyHeader.swift in Sources */,
 				1B2363472C4508E4006DAE0F /* MyCell.swift in Sources */,
 				1B9883E72C464183008DA7AC /* MenuBar.swift in Sources */,
+				1B9883F82C476B55008DA7AC /* Array+.swift in Sources */,
 				1B23632E2C45016E006DAE0F /* AppDelegate.swift in Sources */,
 				1B2363492C452062006DAE0F /* CustomFlowLayout.swift in Sources */,
-				1B9883E92C464C8C008DA7AC /* CustomCompLayout.swift in Sources */,
+				1B9883F52C4759AA008DA7AC /* PageCell.swift in Sources */,
 				1B2363302C45016E006DAE0F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +447,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		1B9883EC2C46772F008DA7AC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -428,6 +462,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B2363412C4501C2006DAE0F /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1B9883ED2C46772F008DA7AC /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B9883EC2C46772F008DA7AC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		1B9883EF2C46772F008DA7AC /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B9883EC2C46772F008DA7AC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		1B9883F12C46772F008DA7AC /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B9883EC2C46772F008DA7AC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

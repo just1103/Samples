@@ -5,6 +5,7 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
     
     //MARK:- properties
     //sticky(스크롤 되어도 상위 고정) 되어야 할 item의 index
+    // section이 추가되어도 지정한 idx만 sticky함
     var stickyIndexPath: IndexPath? {
         didSet {
             invalidateLayout()
@@ -30,19 +31,20 @@ class CustomFlowLayout: UICollectionViewFlowLayout {
     // 지정된 rect에 있는 모든 cell/view의 layout 특성을 반환
     // 참고 - header/footer도 sticky하게 가능 (layoutAttributesForSupplementaryView)
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        var layoutAttributes = super.layoutAttributesForElements(in: rect)
+        var attsList = super.layoutAttributesForElements(in: rect)
         
+        // stickyIndex에 해당하는 item의 layoutAttributes을 받음
+        // attsList에 넣어주면 반영되는듯
         if let stickyAttributes = getStickyAttributes(at: stickyIndexPath) {
-            layoutAttributes?.append(stickyAttributes)
+            attsList?.append(stickyAttributes)
         }
         
-        return layoutAttributes
+        return attsList
     }
     
     //MARK:- private func
     private func getStickyAttributes(at indexPath: IndexPath?) -> UICollectionViewLayoutAttributes? {
-        //stickyIndex에 해당하는 item의 layoutAttributes을 받음
-        guard let collectionView = collectionView,
+        guard let collectionView,
               let stickyIndexPath = indexPath,
               let stickyAttributes = layoutAttributesForItem(at: stickyIndexPath)?.copy() as? UICollectionViewLayoutAttributes // deep copy
               else {
