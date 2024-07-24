@@ -112,8 +112,8 @@ extension ViewController: UIPageViewControllerDelegate {
               let currentVC = pageVC.viewControllers?.first,
               let index = innerVCs.firstIndex(of: currentVC) else { return }
         print("@@@ didFinishAnimating ...", index)
-//        currentIndex = index // FIXME: 정확하게 안잡히는 문제
-//        pageVC.setViewController를 호출하면 안되는듯
+//        currentIndex = index // FIXME: 간헐적으로 flushedVC 관련 크래시 발생, 스크롤 시 화면이 정확히 안잡히는 문제
+//        didFinishAnimating 메서드 내부에서 pageVC.setViewController를 호출하면 안되는듯
         
         menuBar.setSelectedIndex(to: index)
     }
