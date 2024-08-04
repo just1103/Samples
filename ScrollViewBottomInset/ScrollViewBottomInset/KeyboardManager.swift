@@ -28,7 +28,6 @@ final class KeyboardManager: ObservableObject {
         }
         .assign(to: \.keyboardHeight, on: self)
         .store(in: &subscriptions)
-//        .subscribe(Subscribers.Assign(object: self, keyPath: \.keyboardHeight))
         
         NotificationCenter.Publisher(
             center: NotificationCenter.default,
@@ -41,19 +40,5 @@ final class KeyboardManager: ObservableObject {
         }
         .assign(to: \.keyboardHeight, on: self)
         .store(in: &subscriptions)
-//        .subscribe(Subscribers.Assign(object: self, keyPath: \.keyboardHeight))
     }
-    
-//    var needsKeyboardHidden: AnyPublisher<Bool, Never> {
-//        Publishers.Merge(
-//            NotificationCenter.default
-//                .publisher(for: UIResponder.keyboardWillShowNotification)
-//                .map { _ in return false },
-//            NotificationCenter.default
-//                .publisher(for: UIResponder.keyboardWillHideNotification)
-//                .map { _ in return true }
-//        )
-//        .eraseToAnyPublisher()
-//    }
-    
 }
