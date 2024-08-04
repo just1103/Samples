@@ -24,7 +24,7 @@ struct ContentView: View {
                         .padding(.leading, 50)
                         .focused($isFocused)
                         .background(Color.green)
-                        .onChange(of: text) { _ in
+                        .onChange(of: text) { _, _ in
                             // !!!: When text changes, scroll to the end if needed
                             if isFocused {
                                 DispatchQueue.main.async {
@@ -33,7 +33,8 @@ struct ContentView: View {
                             }
                         }
 
-                    Spacer()
+                    Spacer() // bottom inset 역할
+                        .frame(height: 16)
                         .id("bottom")
                 }
                 .background(Color.gray)
@@ -52,7 +53,7 @@ struct ContentView: View {
             .background(Color.mint)
             .onReceive(keyboardManager.$keyboardHeight) { height in
                 print("@@@ inset 넣을게 ...", height)
-                self.bottomInset = height
+                self.bottomInset = height // 주의 - UIKit과 달리 inset으로 해결이 안됨
             }
             
         }
