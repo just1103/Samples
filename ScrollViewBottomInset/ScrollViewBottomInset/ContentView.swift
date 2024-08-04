@@ -10,6 +10,7 @@ struct ContentView: View {
     @State var bottomInset: CGFloat = 0
     
     var body: some View {
+//        GeometryReader { geometry in
         ScrollView {
             VStack(spacing: 0) {
                 Rectangle()
@@ -21,18 +22,33 @@ struct ContentView: View {
                     .padding(.leading, 50)
                     .focused($isFocused)
                     .background(Color.green)
+//                    .contentMargins(.bottom, bottomInset, for: .scrollContent) // x
+//                    .padding(.bottom, bottomInset) // x
+//                    .safeAreaPadding(.bottom, bottomInset) // x
+//                    .safeAreaInset(edge: .bottom, content: { // x
+//                        Rectangle()
+//                            .foregroundStyle(Color.purple)
+//                            .frame(height: bottomInset)
+//                    })
 
-                Spacer()
+//                Spacer()
             }
             .background(Color.gray)
-//            .contentMargins(.bottom, 30, for: .scrollContent) // x
-            .padding(.bottom, bottomInset) // 키보드 높이만큼 패딩 추가
+//            .contentMargins(.bottom, bottomInset, for: .scrollContent) // x
+//            .padding(.bottom, bottomInset) // x
+//            .safeAreaPadding(.bottom, bottomInset) // x
+//            .safeAreaInset(edge: .bottom, content: { // x
+//                Rectangle()
+//                    .foregroundStyle(Color.purple)
+//                    .frame(height: bottomInset)
+//            })
             .background(Color.purple)
         }
         .background(Color.blue)
         .contentMargins(.horizontal, 24, for: .scrollContent)
 //        .contentMargins(.bottom, bottomInset, for: .scrollContent) // x
 //        .padding(.bottom, bottomInset) // x
+//        .safeAreaPadding(.bottom, bottomInset) // x
 //        .safeAreaInset(edge: .bottom, content: { // x
 //            Rectangle()
 //                .foregroundStyle(Color.purple)
