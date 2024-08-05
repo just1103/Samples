@@ -2,10 +2,22 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+
+protocol ViewModelType {
+    var list: [Int] { get }
+}
+
+class ViewModel: ViewModelType {
+    let list: [Int] = [0, 1, 2, 3, 4, 5]
+}
  
 class ViewController: UIViewController {
 
-    private let stickyIndexPath = IndexPath(row: 1, section: 0) // *index 2번의 cell을 sticky하게 구현
+//    private let stickyIndexPath = IndexPath(row: 1, section: 0) // *index 2번의 cell을 sticky하게 구현
+    
+    private var factory = Factory()
+    private lazy var viewModel = factory.viewModel
+    
     
     private lazy var naviBar = createNaviBar()
     private lazy var collectionView = createCollectionView()
@@ -39,7 +51,6 @@ class ViewController: UIViewController {
         // flowLayout
 //        let layout = CustomFlowLayout(stickyIndexPath: stickyIndexPath)
         let layout = UICollectionViewFlowLayout()
-        layout.sectionHeadersPinToVisibleBounds = true // 모든 header를 고정
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
 //        layout.sectionInset = .init(top: 30, left: 5, bottom: 0, right: 5)
@@ -53,7 +64,6 @@ class ViewController: UIViewController {
 //        view.backgroundColor = .systemPink
         view.register(MyCell.self, forCellWithReuseIdentifier: "MyCell")
         view.register(PageCell.self, forCellWithReuseIdentifier: "PageCell")
-        view.register(MyHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MyHeader")
         return view
     }
 
@@ -88,35 +98,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MyHeader", for: indexPath) as? MyHeader else {
-            return UICollectionReusableView()
-        }
-        
-        // 탭 이벤트 연결
-//        header.view.firstLabel
-//        
-//        header.view.secondLabel
-//        header.view.thirdLabel
-//        header.view.setSelectedIndex(to: <#T##Int#>) // pageVC이랑 연결
-        return header
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
         if indexPath.section == 0 {
             return .init(width: width, height: 100) // TODO: estimated로 되는지 체크
         } else {
             return .init(width: width, height: 800)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 0 {
-            return .zero
-        } else {
-            let width = UIScreen.main.bounds.width
-            return .init(width: width, height: 52)
         }
     }
     

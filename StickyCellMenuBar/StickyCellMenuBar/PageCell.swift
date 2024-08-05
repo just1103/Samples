@@ -3,13 +3,38 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+protocol CellModel {
+    var cellType: Cell.Type { get }
+}
+
+protocol Cell: UICollectionViewCell {
+    var cellModel: CellModel? { get set }
+}
+
+extension Cell {
+    func commonConfigure() {
+//        selectionStyle = .none
+        contentView.backgroundColor = .white
+    }
+}
+
+struct PageCellModel: CellModel {
+    var cellType: any Cell.Type
+    
+    
+}
+
 class PageCell: UICollectionViewCell {
     
     var currentPageIndex: Int = 0 // viewModel
     
-//    private lazy var containerVC = createContainerVC()
+    // 근데 어차피 menuBar-pageVC 순이고, 상하 스크롤이 아니라 pageVC의 컨텐츠만 바뀌는거라면
+    // menuBar가 하위 목록의 bounds를 넘어가지 않아서 sticky header일 필요가 없는 것임
+    // 즉, menuBar-pageVC 전체가 1개 cell에 있어도 되는구조
+    // + cellModel로 관리
+    private lazy var menuBarView = createMenuBarView()
     
-    private lazy var pageVC = createPageVC()
+    private lazy var pageVC = createPageVC() // 이걸 어케 최상위VC에 넣을까 . . . . .
     private lazy var innerVCs = createInnerVCs()
     private let disposeBag = DisposeBag()
     
@@ -28,18 +53,21 @@ class PageCell: UICollectionViewCell {
     
     private func layout() {
         contentView.backgroundColor = .white
-        // pageVC addChild 하려면 vc이 필요하구나
+        // pageVC addChild 하려면 vc이 필요하구나 (lifeCycle 관리를 위해 필요함. 최상위 vc에 addChild 필요!)
         // 최상위 VC에 addChild 해야함
         // inputViewController 이거 안될듯
 //        contentView.inputViewController?.addChild(pageVC)
 //        pageVC.didMove(toParent: self)
         
-        // 아님 필요없음. view만 올리는 느낌으로 써도됨
+        contentView.addSubview(menuBarView)
+        menuBarView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
         contentView.addSubview(pageVC.view)
         pageVC.view.snp.makeConstraints { make in
-//            make.top.equalTo(menuBar.snp.bottom) // 이게 다른 cell에 있으니까 sticky가 필요한거 아닌가?
-//            make.leading.trailing.bottom.equalToSuperview()
-            make.edges.equalToSuperview()
+            make.top.equalTo(menuBarView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
         }
         
         // test
@@ -47,9 +75,10 @@ class PageCell: UICollectionViewCell {
         pageVC.setViewControllers([first], direction: .forward, animated: false)
     }
     
-//    private func createContainerVC() -> UICollectionView {
-//        
-//    }
+    private func createMenuBarView() -> MenuBarView {
+        let view = MenuBarView()
+        return view
+    }
     
     private func createPageVC() -> UIPageViewController {
         let view = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
