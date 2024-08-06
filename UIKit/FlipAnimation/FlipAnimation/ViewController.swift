@@ -32,27 +32,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         layout()
-        
+        setTimer()
+    }
+    
+    private func setTimer() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self else { return }
-            updateLayout(visibleIndex: index, isInitial: isInitial)
+            updateLayout(index, isInitial: isInitial)
+            index = (index + 1) % viewList.count
             isInitial = false
-            index += 1
-            
-            if index == viewList.count {
-                index = 0
-            }
         }
     }
     
-    private func updateLayout(visibleIndex: Int, isInitial: Bool) {
-        // 0 1 2 -> 0 1 2 -> 0 1 2 ...
+    // 보여주기 전에 밑으로 보내는걸로 해볼까
+    private func updateLayout(_ index: Int, isInitial: Bool) {
+        // 0 1 2 -> 0 1 2 -> 0 1 2 .
         let viewToShow = viewList[safe: index]
         
         // x 0 1 -> 2 0 1 -> 2 0 1 ...
-        let editedIndex = index == 0 ? 2 : index - 1
+        let editedIndex = index == 0 ? viewList.count - 1 : index - 1
         let viewToHide = isInitial ? nil : viewList[safe: editedIndex]
         
         UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut]) {
