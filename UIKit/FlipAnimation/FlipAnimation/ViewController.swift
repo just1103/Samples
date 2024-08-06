@@ -28,47 +28,52 @@ class ViewController: UIViewController {
     }()
     
     private var index = 0
+    private var isInitial = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         layout()
         
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] _ in
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self else { return }
-            updateLayout(visibleIndex: index)
+            updateLayout(visibleIndex: index, isInitial: isInitial)
+            isInitial = false
             index += 1
             
-            if index == 3 {
-                index = -1
+            if index == viewList.count {
+                index = 0
             }
         }
-
     }
     
-    private func updateLayout(visibleIndex: Int) {
+    private func updateLayout(visibleIndex: Int, isInitial: Bool) {
+        // 0 1 2 -> 0 1 2 -> 0 1 2 ...
         let viewToShow = viewList[safe: index]
-        let viewToHide = viewList[safe: index - 1]
         
-        UIView.animate(withDuration: 2.0, delay: 0, options: [.curveEaseInOut]) {
+        // x 0 1 -> 2 0 1 -> 2 0 1 ...
+        let editedIndex = index == 0 ? 2 : index - 1
+        let viewToHide = isInitial ? nil : viewList[safe: editedIndex]
+        
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseInOut]) {
             viewToShow?.snp.updateConstraints { make in
                 make.centerY.equalToSuperview()
             }
             
             viewToHide?.snp.updateConstraints { make in
-                make.centerY.equalToSuperview().offset(-100)
+                make.centerY.equalToSuperview().offset(-100) // 박스 위
             }
             
             self.view.layoutIfNeeded()
         } completion: { _ in
             viewToHide?.snp.updateConstraints { make in
-                make.centerY.equalToSuperview().offset(100)
+                make.centerY.equalToSuperview().offset(100) // 박스 아래
             }
         }
     }
 
     private func layout() {
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         view.addSubview(visibleArea)
         
         visibleArea.snp.makeConstraints { make in
