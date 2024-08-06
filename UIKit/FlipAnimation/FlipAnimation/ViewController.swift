@@ -3,6 +3,12 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    enum Layout {
+        static let bannerHeight = 28.0
+        static let bannerVMargin = 2.0
+        static let bannerOffsetY = Layout.bannerVMargin + Layout.bannerHeight
+    }
+    
     private lazy var viewList = [view1, view2, view3, view4]
 //    private lazy var viewList = [view1]
     
@@ -70,15 +76,13 @@ class ViewController: UIViewController {
             viewToShow?.snp.updateConstraints { make in
                 make.centerY.equalToSuperview()
             }
-            
             viewToHide?.snp.updateConstraints { make in
-                make.centerY.equalToSuperview().offset(-100) // 박스 위
+                make.centerY.equalToSuperview().offset(-Layout.bannerOffsetY) // 박스 위
             }
-            
             self.view.layoutIfNeeded()
         } completion: { _ in
             viewToHide?.snp.updateConstraints { make in
-                make.centerY.equalToSuperview().offset(100) // 박스 아래
+                make.centerY.equalToSuperview().offset(Layout.bannerOffsetY) // 박스 아래
             }
         }
     }
@@ -89,7 +93,8 @@ class ViewController: UIViewController {
         
         visibleArea.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(Layout.bannerHeight)
+//            make.height.equalTo(100) // test
             make.leading.trailing.equalToSuperview().inset(30)
         }
         
@@ -97,10 +102,9 @@ class ViewController: UIViewController {
             visibleArea.addSubview(view)
             view.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.centerY.equalToSuperview().offset(100)
+                make.centerY.equalToSuperview().offset(Layout.bannerOffsetY)
             }
         }
     }
 
 }
-

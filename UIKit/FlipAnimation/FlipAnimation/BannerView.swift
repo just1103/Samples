@@ -23,6 +23,7 @@ final class BannerView: UIView {
         view.directionalLayoutMargins = .init(top: 0, leading: 12, bottom: 0, trailing: 12)
         view.isLayoutMarginsRelativeArrangement = true
         view.spacing = 4
+        view.setCustomSpacing(2, after: rightLabel)
         view.alignment = .center
         return view
     }()
