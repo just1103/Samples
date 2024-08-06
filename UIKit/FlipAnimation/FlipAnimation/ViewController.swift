@@ -3,7 +3,8 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    private lazy var viewList = [view1, view2, view3]
+    private lazy var viewList = [view1, view2, view3, view4]
+//    private lazy var viewList = [view1]
     
     private let visibleArea: UIView = {
         let view = UIView()
@@ -11,19 +12,24 @@ class ViewController: UIViewController {
         view.clipsToBounds = true
         return view
     }()
-    private let view1: UIView = {
-        let view = UIView()
-        view.backgroundColor = .orange
+    private let view1: BannerView = {
+        let view = BannerView()
+        view.configure(leftText: "추석특가1", rightText: "1시간 남았어요", animation: .alarm)
         return view
     }()
-    private let view2: UIView = {
-        let view = UIView()
-        view.backgroundColor = .yellow
+    private let view2: BannerView = {
+        let view = BannerView()
+        view.configure(leftText: "추석특가2", rightText: "32,000원 올라가요", animation: .arrowUp)
         return view
     }()
-    private let view3: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
+    private let view3: BannerView = {
+        let view = BannerView()
+        view.configure(leftText: "추석특가3", rightText: "사실 2시간 남았어요", animation: .alarm)
+        return view
+    }()
+    private let view4: BannerView = {
+        let view = BannerView()
+        view.configure(leftText: "추석특가4", rightText: "사실 1,000원 올라가요", animation: .arrowUp)
         return view
     }()
     
@@ -37,7 +43,14 @@ class ViewController: UIViewController {
     }
     
     private func setTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+        guard viewList.count > 1 else {
+            viewList.first?.snp.updateConstraints { make in
+                make.centerY.equalToSuperview()
+            }
+            return
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] _ in
             guard let self else { return }
             updateLayout(index, isInitial: isInitial)
             index = (index + 1) % viewList.count
@@ -45,7 +58,6 @@ class ViewController: UIViewController {
         }
     }
     
-    // 보여주기 전에 밑으로 보내는걸로 해볼까
     private func updateLayout(_ index: Int, isInitial: Bool) {
         // 0 1 2 -> 0 1 2 -> 0 1 2 .
         let viewToShow = viewList[safe: index]
@@ -84,8 +96,6 @@ class ViewController: UIViewController {
         viewList.forEach { view in
             visibleArea.addSubview(view)
             view.snp.makeConstraints { make in
-                make.width.equalTo(200)
-                make.height.equalTo(50)
                 make.centerX.equalToSuperview()
                 make.centerY.equalToSuperview().offset(100)
             }

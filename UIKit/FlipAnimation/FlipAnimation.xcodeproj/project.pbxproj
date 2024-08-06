@@ -15,6 +15,10 @@
 		1BE9718B2C60CF1B00D6F232 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1BE9718A2C60CF1B00D6F232 /* Base */; };
 		1BE971942C60CFA900D6F232 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1BE971932C60CFA900D6F232 /* SnapKit */; };
 		1BE971962C60D81500D6F232 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE971952C60D81500D6F232 /* Array+.swift */; };
+		1BE971992C61C64500D6F232 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1BE971982C61C64500D6F232 /* Lottie */; };
+		1BE9719D2C61C67C00D6F232 /* arrowup.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BE9719B2C61C67C00D6F232 /* arrowup.json */; };
+		1BE9719E2C61C67C00D6F232 /* hover-alarm.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BE9719C2C61C67C00D6F232 /* hover-alarm.json */; };
+		1BE971A02C61C6B200D6F232 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9719F2C61C6B200D6F232 /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,9 @@
 		1BE9718A2C60CF1B00D6F232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BE9718C2C60CF1B00D6F232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BE971952C60D81500D6F232 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		1BE9719B2C61C67C00D6F232 /* arrowup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrowup.json; sourceTree = "<group>"; };
+		1BE9719C2C61C67C00D6F232 /* hover-alarm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hover-alarm.json"; sourceTree = "<group>"; };
+		1BE9719F2C61C6B200D6F232 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE971942C60CFA900D6F232 /* SnapKit in Frameworks */,
+				1BE971992C61C64500D6F232 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +68,11 @@
 		1BE9717D2C60CF1900D6F232 /* FlipAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				1BE9719A2C61C64A00D6F232 /* Lottie */,
 				1BE9717E2C60CF1900D6F232 /* AppDelegate.swift */,
 				1BE971802C60CF1900D6F232 /* SceneDelegate.swift */,
 				1BE971822C60CF1900D6F232 /* ViewController.swift */,
+				1BE9719F2C61C6B200D6F232 /* BannerView.swift */,
 				1BE971952C60D81500D6F232 /* Array+.swift */,
 				1BE971842C60CF1900D6F232 /* Main.storyboard */,
 				1BE971872C60CF1B00D6F232 /* Assets.xcassets */,
@@ -70,6 +80,15 @@
 				1BE9718C2C60CF1B00D6F232 /* Info.plist */,
 			);
 			path = FlipAnimation;
+			sourceTree = "<group>";
+		};
+		1BE9719A2C61C64A00D6F232 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				1BE9719B2C61C67C00D6F232 /* arrowup.json */,
+				1BE9719C2C61C67C00D6F232 /* hover-alarm.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +109,7 @@
 			name = FlipAnimation;
 			packageProductDependencies = (
 				1BE971932C60CFA900D6F232 /* SnapKit */,
+				1BE971982C61C64500D6F232 /* Lottie */,
 			);
 			productName = FlipAnimation;
 			productReference = 1BE9717B2C60CF1900D6F232 /* FlipAnimation.app */;
@@ -121,6 +141,7 @@
 			mainGroup = 1BE971722C60CF1900D6F232;
 			packageReferences = (
 				1BE971922C60CFA900D6F232 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1BE971972C61C64500D6F232 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 1BE9717C2C60CF1900D6F232 /* Products */;
 			projectDirPath = "";
@@ -136,6 +157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE9719D2C61C67C00D6F232 /* arrowup.json in Resources */,
+				1BE9719E2C61C67C00D6F232 /* hover-alarm.json in Resources */,
 				1BE971882C60CF1B00D6F232 /* Assets.xcassets in Resources */,
 				1BE9718B2C60CF1B00D6F232 /* Base in Resources */,
 				1BE971862C60CF1900D6F232 /* Base in Resources */,
@@ -149,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE971A02C61C6B200D6F232 /* BannerView.swift in Sources */,
 				1BE971832C60CF1900D6F232 /* ViewController.swift in Sources */,
 				1BE971962C60D81500D6F232 /* Array+.swift in Sources */,
 				1BE9717F2C60CF1900D6F232 /* AppDelegate.swift in Sources */,
@@ -385,6 +409,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		1BE971972C61C64500D6F232 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -392,6 +424,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1BE971922C60CFA900D6F232 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1BE971982C61C64500D6F232 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BE971972C61C64500D6F232 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
