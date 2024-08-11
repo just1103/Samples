@@ -24,10 +24,12 @@ struct ContentView: View {
                         .padding(.leading, 50)
                         .focused($isFocused)
                         .background(Color.green)
+                        .id("bottom2") // 이건 계속 숨겨짐
                         .onChange(of: text) { _, _ in
                             // !!!: When text changes, scroll to the end if needed
                             if isFocused {
                                 DispatchQueue.main.async {
+                                    // FIXME: 전체 텍스트가 화면높이보다 길 때, 텍스트 앞부분 수정할 때는 scroll 시키면 안됨 
                                     proxy.scrollTo("bottom", anchor: .bottom)
                                 }
                             }
