@@ -70,9 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				1B16AA4D2C6CA61E006B87FD /* NavigationDI */,
-				1B16AA522C6CA677006B87FD /* LoginView.swift */,
-				1B16AA502C6CA661006B87FD /* MainTabView.swift */,
-				1B16AA602C6CAA18006B87FD /* HomeView.swift */,
 				1B16AA432C6CA607006B87FD /* Assets.xcassets */,
 				1B16AA452C6CA607006B87FD /* Preview Content */,
 			);
@@ -94,6 +91,7 @@
 				1B16AA412C6CA605006B87FD /* ContentView.swift */,
 				1B16AA4E2C6CA64B006B87FD /* AuthenticationViewModel.swift */,
 				1B16AA5A2C6CA7A6006B87FD /* Dependency */,
+				1B16AA622C6CB79A006B87FD /* Views */,
 			);
 			path = NavigationDI;
 			sourceTree = "<group>";
@@ -110,6 +108,16 @@
 			name = Dependency;
 			path = "/Users/sonhyoju/Documents/스터디_Projects/iOS 스터디!/Sample_git/Samples/SwiftUI/Navigation/Navigation/Dependency";
 			sourceTree = "<absolute>";
+		};
+		1B16AA622C6CB79A006B87FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B16AA522C6CA677006B87FD /* LoginView.swift */,
+				1B16AA502C6CA661006B87FD /* MainTabView.swift */,
+				1B16AA602C6CAA18006B87FD /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
