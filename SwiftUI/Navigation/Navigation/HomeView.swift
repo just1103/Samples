@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    // ???: 만약에 HomeView에 HomeViewModel이 있고, HomeViewModel에서 로그인/로그아웃 관련 작업을 한다면
+    // authViewModel이 싱글턴이 아닐 때 처리가 복잡하지 않을까?
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @State private var showLoginSheet = false
     
