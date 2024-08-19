@@ -1,7 +1,29 @@
 import SwiftUI
 
-enum TabItem {
+enum TabItem: CaseIterable {
     case home, profile, settings
+    
+    var title: String {
+        switch self {
+        case .home:
+            return "Home"
+        case .profile:
+            return "Profile"
+        case .settings:
+            return "Settings"
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .home:
+            return "house"
+        case .profile:
+            return "person"
+        case .settings:
+            return "gear"
+        }
+    }
 }
 
 struct MainTabView: View {
@@ -13,35 +35,39 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
+            ForEach(TabItem.allCases, id: \.self) { tab in
+                Group {
+                    switch tab {
+                    case .home:
+                        HomeView()
+                            .environmentObject(container)
+                    case .profile:
+                        Circle() // 실제로는 안보이는 뷰
+                            .foregroundStyle(Color.yellow)
+                    case .settings:
+                        Circle()
+                            .foregroundStyle(Color.blue)
+                    }
                 }
-                .tag(TabItem.home)
-            
-            Circle()
-                .foregroundStyle(Color.yellow)
                 .tabItem {
-                    Label("Profile", systemImage: "person")
+                    Label(tab.title, systemImage: tab.icon)
+                        .environment(\.symbolVariants, .none)
                 }
-                .tag(TabItem.profile)
-            
-            Circle()
-                .foregroundStyle(Color.blue)
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
-                }
-                .tag(TabItem.settings)
+                .tag(tab)
+            }
         }
         .onAppear {
+            print("@@@ MainTab - onAppear")
             authViewModel.send(action: .checkAuthenticationState)
         }
-//        .onChange(of: authViewModel.authenticationState) { old, newState in
-//            showLoginSheet = newState == .unauthenticated
-//        }
-//        .sheet(isPresented: $showLoginSheet) { // Home에서 로그인/이웃 처리하려면 각 탭아이템뷰에서 띄워야할듯?
-//            LoginView()
-//                .environmentObject(authViewModel)
-//        }
+        .onChange(of: selectedTab) { _, newTab in
+            print("@@@ MainTab - newTab", newTab)
+            // !!!: 기존 탭의 navigationStack에 push
+            if newTab == .profile {
+                selectedTab = .home
+                container.navigationRouter.push(to: .profileView)
+            }
+        }
+
     }
 }

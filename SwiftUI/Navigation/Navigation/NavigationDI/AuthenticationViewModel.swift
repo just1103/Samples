@@ -21,7 +21,8 @@ class AuthenticationViewModel: ObservableObject {
         case .checkAuthenticationState:
             // 예제 - 자동로그인 안되도록 처리
             // API 오류나서 한번에 체크 못하면 어떻게 처리? -> 게스트로 취급
-            self.authenticationState = .unauthenticated
+            self.authenticationState = .authenticated
+//            self.authenticationState = .unauthenticated
         case .signIn:
             self.authenticationState = .authenticated
         case .signOut:

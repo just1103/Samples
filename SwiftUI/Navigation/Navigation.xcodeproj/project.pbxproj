@@ -20,6 +20,7 @@
 		1B16AA5E2C6CA7A6006B87FD /* ObservableObjectSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16AA572C6CA7A6006B87FD /* ObservableObjectSettable.swift */; };
 		1B16AA5F2C6CA7A6006B87FD /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16AA592C6CA7A6006B87FD /* DIContainer.swift */; };
 		1B16AA612C6CAA18006B87FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B16AA602C6CAA18006B87FD /* HomeView.swift */; };
+		1B3363672C73396400B12197 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3363662C73396400B12197 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		1B16AA572C6CA7A6006B87FD /* ObservableObjectSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableObjectSettable.swift; sourceTree = "<group>"; };
 		1B16AA592C6CA7A6006B87FD /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		1B16AA602C6CAA18006B87FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1B3363662C73396400B12197 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				1B16AA522C6CA677006B87FD /* LoginView.swift */,
 				1B16AA502C6CA661006B87FD /* MainTabView.swift */,
 				1B16AA602C6CAA18006B87FD /* HomeView.swift */,
+				1B3363662C73396400B12197 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				1B16AA5D2C6CA7A6006B87FD /* NavigationRoutingView.swift in Sources */,
 				1B16AA5F2C6CA7A6006B87FD /* DIContainer.swift in Sources */,
 				1B16AA5C2C6CA7A6006B87FD /* NavigationRouter.swift in Sources */,
+				1B3363672C73396400B12197 /* ProfileView.swift in Sources */,
 				1B16AA422C6CA605006B87FD /* ContentView.swift in Sources */,
 				1B16AA612C6CAA18006B87FD /* HomeView.swift in Sources */,
 				1B16AA5E2C6CA7A6006B87FD /* ObservableObjectSettable.swift in Sources */,
