@@ -10,7 +10,16 @@ protocol ViewModelType {
 class ViewModel: ViewModelType {
     let list: [Int] = [0, 1, 2, 3, 4, 5]
 }
- 
+
+// FIXME: carousel panGesture를 pageVC이 가로채는 문제
+// VC
+// CollectionView
+// PageCell
+// PageVC <- pan gesture는 잘 먹는데?
+// VC (innerVCs)
+// CollectionView (carousel) <- 여기를 horizontal scroll
+// MyCell
+
 class ViewController: UIViewController {
 
 //    private let stickyIndexPath = IndexPath(row: 1, section: 0) // *index 2번의 cell을 sticky하게 구현

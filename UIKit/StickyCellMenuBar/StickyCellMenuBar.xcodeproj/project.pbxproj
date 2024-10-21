@@ -23,6 +23,7 @@
 		1B9883F52C4759AA008DA7AC /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883F42C4759AA008DA7AC /* PageCell.swift */; };
 		1B9883F82C476B55008DA7AC /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883F72C476B55008DA7AC /* Array+.swift */; };
 		1B9883FA2C479B6D008DA7AC /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9883F92C479B6D008DA7AC /* Factory.swift */; };
+		1BD98DA32CC62ACB0026ABB8 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98DA22CC62ACB0026ABB8 /* ProductListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		1B9883F42C4759AA008DA7AC /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		1B9883F72C476B55008DA7AC /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		1B9883F92C479B6D008DA7AC /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		1BD98DA22CC62ACB0026ABB8 /* ProductListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				1B2363462C4508E4006DAE0F /* MyCell.swift */,
 				1B9883F42C4759AA008DA7AC /* PageCell.swift */,
 				1B9883E52C46410E008DA7AC /* MenuBar */,
+				1BD98DA12CC628FB0026ABB8 /* Carousel */,
 				1B9883F62C476B4B008DA7AC /* Extension */,
 				1B9883E32C4640F9008DA7AC /* Resources */,
 				1B23633B2C45016F006DAE0F /* Info.plist */,
@@ -123,6 +126,14 @@
 				1B9883F72C476B55008DA7AC /* Array+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1BD98DA12CC628FB0026ABB8 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				1BD98DA22CC62ACB0026ABB8 /* ProductListVC.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD98DA32CC62ACB0026ABB8 /* ProductListVC.swift in Sources */,
 				1B2363322C45016E006DAE0F /* ViewController.swift in Sources */,
 				1B2363472C4508E4006DAE0F /* MyCell.swift in Sources */,
 				1B9883E72C464183008DA7AC /* MenuBar.swift in Sources */,

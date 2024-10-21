@@ -5,6 +5,7 @@ class MyCell: UICollectionViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.textColor = .white
+        label.textAlignment = .center
         return label
     }()
     
@@ -28,6 +29,7 @@ class MyCell: UICollectionViewCell {
         
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
             make.center.equalToSuperview()
         }
     }
