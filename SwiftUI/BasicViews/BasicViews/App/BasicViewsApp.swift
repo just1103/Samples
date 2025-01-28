@@ -11,7 +11,7 @@ import SwiftUI
 struct BasicViewsApp: App {
     var body: some Scene {
         WindowGroup {
-            RedrawingTextView()
+            BindingView()
         }
     }
 }
