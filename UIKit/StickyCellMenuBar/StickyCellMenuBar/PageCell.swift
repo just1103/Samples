@@ -26,7 +26,12 @@ struct PageCellModel: CellModel {
 
 class PageCell: UICollectionViewCell {
     
-    var currentPageIndex: Int = 0 // viewModel
+    // viewModel
+    var currentPageIndex: Int = 0 {
+        didSet {
+            menuBarView.setSelectedIndex(to: currentPageIndex)
+        }
+    }
     
     // 근데 어차피 menuBar-pageVC 순이고, 상하 스크롤이 아니라 pageVC의 컨텐츠만 바뀌는거라면
     // menuBar가 하위 목록의 bounds를 넘어가지 않아서 sticky header일 필요가 없는 것임
@@ -34,31 +39,29 @@ class PageCell: UICollectionViewCell {
     // + cellModel로 관리
     private lazy var menuBarView = createMenuBarView()
     
-    private lazy var pageVC = createPageVC() // 이걸 어케 최상위VC에 넣을까 . . . . .
+    // 이걸 어케 최상위VC에 넣을까.. factory에서 정리해서 반환해주면 좋겠다
+    private lazy var pageVC = createPageVC()
     private lazy var innerVCs = createInnerVCs()
+    
     private let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
+        configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(text: String) {
-        
+    func configure() {
+        // TODO: menuBar label 탭하면 currentPageIndex 바꿔주기
     }
     
     private func layout() {
         contentView.backgroundColor = .white
-        // pageVC addChild 하려면 vc이 필요하구나 (lifeCycle 관리를 위해 필요함. 최상위 vc에 addChild 필요!)
-        // 최상위 VC에 addChild 해야함
-        // inputViewController 이거 안될듯
-//        contentView.inputViewController?.addChild(pageVC)
-//        pageVC.didMove(toParent: self)
-        
+
         contentView.addSubview(menuBarView)
         menuBarView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
@@ -68,6 +71,12 @@ class PageCell: UICollectionViewCell {
         pageVC.view.snp.makeConstraints { make in
             make.top.equalTo(menuBarView.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        // TODO: pageVC도 최상위 PV에 addChild 해야하는데 일단 생략 (lifeCycle 관리해야해서)
+        innerVCs.forEach {
+            pageVC.addChild($0)
+            $0.didMove(toParent: pageVC)
         }
         
         // test
@@ -84,17 +93,21 @@ class PageCell: UICollectionViewCell {
         let view = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         view.dataSource = self
         view.delegate = self
+        view.view.backgroundColor = .lightGray
         return view
     }
     
     private func createInnerVCs() -> [UIViewController] {
-        let vc1 = UIViewController()
-        vc1.view.backgroundColor = .blue
+        let vc0 = UIViewController()
+        vc0.view.backgroundColor = .orange
+        
+        let vc1 = ProductListVC()
+        vc1.view.backgroundColor = .green
         
         let vc2 = UIViewController()
-        vc2.view.backgroundColor = .green
+        vc2.view.backgroundColor = .blue
         
-        return [vc1, vc2]
+        return [vc0, vc1, vc2]
     }
 }
 
@@ -106,6 +119,7 @@ extension PageCell: UIPageViewControllerDataSource {
     ) -> UIViewController? {
 //        let index = viewModel.output.currentPageIndex.value
         let index = currentPageIndex
+        currentPageIndex = index
         return innerVCs[safe: index - 1]
     }
     
@@ -115,6 +129,7 @@ extension PageCell: UIPageViewControllerDataSource {
     ) -> UIViewController? {
 //        let index = viewModel.output.currentPageIndex.value
         let index = currentPageIndex
+        currentPageIndex = index
         return innerVCs[safe: index + 1]
     }
 }
@@ -130,5 +145,6 @@ extension PageCell: UIPageViewControllerDelegate {
               let currentVC = pageVC.viewControllers?.first,
               let index = innerVCs.firstIndex(of: currentVC) else { return }
 //        viewModel.input.menuSelected.accept(index)
+        currentPageIndex = index
     }
 }
