@@ -31,6 +31,10 @@ struct ObservableObjectView: View {
         // 1
         Text("\(hyo.name) \(hyo.age)")
             .background(Color.random)
+        Text("\(hyo.name)") // 값은 똑같지만 Contact 중 하나라도 변경되면 redraw 함 (별도 View로 분리하지 않으면 비효율적)
+            .background(Color.random)
+        Text("\(hyo.age)")
+            .background(Color.random)
         Button("Hyo Age +") {
             // hyo/ping 인스턴스가 let으로 선언되어 있으면? Text에 바로 반영되지 않음
             // @ObservedObject가 있어야 반영됨

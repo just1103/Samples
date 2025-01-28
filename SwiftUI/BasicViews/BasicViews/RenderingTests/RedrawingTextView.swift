@@ -16,7 +16,8 @@ class MyViewModel: ObservableObject {
 
 struct RedrawingTextView: View {
 
-    @StateObject var viewModel = MyViewModel()
+    @ObservedObject var viewModel = MyViewModel()
+//    @StateObject var viewModel = MyViewModel()
     @State var thirdTitle = "thirdTitle"
 
     var body: some View {
