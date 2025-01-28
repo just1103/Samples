@@ -1,13 +1,7 @@
-//
-//  ContentView.swift
-//  BasicViews
-//
-//  Created by Hyoju Son on 1/28/25.
-//
-
 import SwiftUI
 
 struct RainbowView: View {
+    
     var body: some View {
         
         // viewModifier : padding, background 등
