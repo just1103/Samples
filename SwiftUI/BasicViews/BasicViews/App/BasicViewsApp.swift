@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct BasicViewsApp: App {
+    private let info = CommonInfo()
+    
     var body: some Scene {
         WindowGroup {
-            ColorSchemeView()
+//            ColorSchemeView()
+            
+            CommonInfoView()
+                .environmentObject(info)
         }
     }
 }
