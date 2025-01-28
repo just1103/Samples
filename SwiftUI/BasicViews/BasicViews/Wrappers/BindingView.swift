@@ -7,6 +7,7 @@ struct BindingView: View {
     var body: some View {
         Text(isPlaying ? "Paused ..." : "Playing ...")
         
+        // 상위 뷰 @State <-> 하위 뷰 @Binding
         ChildView(isPlaying: $isPlaying)
         
         ChildView(isPlaying: $isPlaying)
