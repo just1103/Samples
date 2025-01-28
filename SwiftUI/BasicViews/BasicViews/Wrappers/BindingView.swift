@@ -8,6 +8,8 @@ struct BindingView: View {
         Text(isPlaying ? "Paused ..." : "Playing ...")
         
         ChildView(isPlaying: $isPlaying)
+        
+        ChildView(isPlaying: $isPlaying)
     }
 }
 
