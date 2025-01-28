@@ -4,6 +4,9 @@ class ProgressModel: ObservableObject {
     @Published var progress: Float = 0 // 진행률 (0 ~ 1)
 }
 
+// Q. 만약 Timer를 사용하고 싶다면?
+// 구조체 내부에서 Timer 만들면 mutating 메서드 필요해서 구현 까다로움
+// -> class 타입 ViewModel이 timer를 갖게 하고, ViewModel 내의 원하는 값 업데이트 하도록 (!)
 struct ProgressBarView: View {
     
     // 둘다 가능
