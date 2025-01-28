@@ -9,5 +9,6 @@ struct ColorSchemeView: View {
     var body: some View {
         Text("Hello")
             .foregroundStyle(colorScheme == .dark ? .purple : .yellow)
+            .background(Color.random)
     }
 }
