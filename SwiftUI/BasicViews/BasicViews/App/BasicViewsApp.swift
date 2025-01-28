@@ -13,10 +13,10 @@ struct BasicViewsApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ColorSchemeView()
+            ProgressBarView()
             
-            CommonInfoView()
-                .environmentObject(info)
+//            CommonInfoView()
+//                .environmentObject(info)
         }
     }
 }
