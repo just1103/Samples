@@ -31,6 +31,9 @@ struct RedrawingTextView: View {
             ThirdView(text: thirdTitle)
                 .background(.random)
 
+            Text(thirdTitle) // 별도 view가 아니므로 항상 색깔 변경됨 
+                .background(.random)
+            
             Button("Change first title") {
                 viewModel.changeFirstTitle()
             }
