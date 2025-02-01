@@ -13,7 +13,7 @@ struct BasicViewsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            FavoriteButtonView()
+            HitTestView()
             
 //            CommonInfoView()
 //                .environmentObject(info)
