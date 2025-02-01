@@ -1,6 +1,7 @@
 import SwiftUI
 
-// touchArea 크기를 줄이고 싶다면?
+// Button touchArea (tappableArea) 크기를 줄이고 싶다면?
+
 // ref: https://medium.com/arcush-tech/how-to-increase-a-swiftui-view-tap-area-without-sacrificing-the-layout-1d9e7c9d0dbf
 
 struct ButtonTouchAreaResizedView: View {
@@ -19,26 +20,13 @@ struct ButtonTouchAreaResizedView: View {
                 .foregroundStyle(Color.brown)
                 .frame(width: 100, height: 100)
         }
-        .frame(width: 120, height: 120)
+        .frame(width: 120, height: 120) // bg만 변경되고, touchArea에는 영향 없음
         .background(Color.yellow)
         .frame(width: 140, height: 140)
         .background(Color.green)
 //        .contentShape(Rectangle().size(width: 105, height: 105)) // touchArea 모양만 조정됨 (size는 안됨)
         .padding(.bottom, 50)
-        
-        Button {
-            isFavorite.toggle()
-        } label: {
-            Image(systemName: isFavorite ? "square.fill" : "square")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color.brown)
-                .frame(width: 100, height: 100)
-        }
-        .frame(width: 50, height: 50) // yellow bg만 변경됨
-        .background(Color.yellow)
-        .padding(.bottom, 50)
-        
+
         Button {
             isFavorite.toggle()
         } label: {
@@ -59,6 +47,7 @@ struct ButtonTouchAreaResizedView: View {
                 .frame(width: 100, height: 100) // 터치 가능한 영역 표시
         )
 
+        // touch area 넓히기
         Button {
             isFavorite.toggle()
         } label: {
@@ -73,7 +62,46 @@ struct ButtonTouchAreaResizedView: View {
             onTap: {
                 isFavorite.toggle()
             }))
+        .padding(.bottom, 50)
 
+        // Image + onTapGesture도 동일한 문제
+        Image(systemName: isFavorite ? "square.fill" : "square")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .foregroundStyle(Color.brown)
+            .frame(width: 100, height: 100)
+            .contentShape(Rectangle().size(width: 100, height: 100))
+            .onTapGesture {
+                isFavorite.toggle()
+            }
+        
+        // walkaround-1. 버튼 크기 줄이고 위에 원하는 크기의 이미지 깔기
+        ZStack {
+            Button {
+                isFavorite.toggle()
+            } label: {
+                Color.clear
+                    .frame(width: 80, height: 80) // 실제 크기보다 줄이기
+                
+//                Image(systemName: isFavorite ? "square.fill" : "square")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .foregroundStyle(Color.green)
+//                    .frame(width: 80, height: 80) // 실제 크기보다 줄이기
+            }
+            .frame(width: 80, height: 80)
+            .background(Color.yellow)
+            .frame(width: 120, height: 120)
+            .background(Color.blue)
+            
+            Image(systemName: isFavorite ? "square.fill" : "square")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color.brown)
+                .frame(width: 100, height: 100) // 원하는 크기
+                .allowsHitTesting(false) // tap gesture를 Button에 전달
+        }
+        
     }
 }
 
