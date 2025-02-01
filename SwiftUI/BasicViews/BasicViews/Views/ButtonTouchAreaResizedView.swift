@@ -11,6 +11,7 @@ struct ButtonTouchAreaResizedView: View {
     var body: some View {
         
         // default로 padding 20 만큼 touchArea가 넓음
+        // ex. 좌 10, 우 10
         Button {
             isFavorite.toggle()
         } label: {
@@ -80,7 +81,8 @@ struct ButtonTouchAreaResizedView: View {
             Button {
                 isFavorite.toggle()
             } label: {
-                Color.clear
+                Rectangle()
+                    .fill(Color.green)
                     .frame(width: 80, height: 80) // 실제 크기보다 줄이기
                 
 //                Image(systemName: isFavorite ? "square.fill" : "square")
@@ -89,7 +91,7 @@ struct ButtonTouchAreaResizedView: View {
 //                    .foregroundStyle(Color.green)
 //                    .frame(width: 80, height: 80) // 실제 크기보다 줄이기
             }
-            .frame(width: 80, height: 80)
+            .frame(width: 100, height: 100)
             .background(Color.yellow)
             .frame(width: 120, height: 120)
             .background(Color.blue)
