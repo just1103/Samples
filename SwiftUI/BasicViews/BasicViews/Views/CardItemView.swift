@@ -1,55 +1,46 @@
 import SwiftUI
 
+// https://developer.apple.com/documentation/swiftui/laying-out-a-simple-view
+// https://developer.apple.com/documentation/swiftui/picking-container-views-for-your-content
+// https://developer.apple.com/documentation/swiftui/aligning-views-within-a-stack
+
 struct CardItemView: View {
     
+    // view container를 적절히 섞어서 쓰는게 키포인트
     var body: some View {
-        VStack {
-            ZStack(alignment: .bottom) {
-                Rectangle()
-                    .frame(width: 300, height: 300)
-                    .foregroundColor(.blue)
+        ZStack(alignment: .bottom) {
+            VStack {
+                // 핑크 네모 기준
+                // 상하좌우 padding = 8 / 24 / 16 / 16
+                // 핑크 네모가 1:1이면, 하+좌우만 설정해도 top이 결정됨
+                // 근데 왜 상=(1) 없으면 안그려지지? -> 초록 네모가 작아져서 (!)
+                Spacer()
+                    .frame(height: 8)
                 
                 Rectangle()
-                    .frame(width: 200, height: 200)
                     .foregroundColor(.pink)
-                    .padding(70)
-                
-                Text("Hello, SwiftUI!")
-//                    .padding(.horizontal, 20) // 원했던게 아님 (글자-bg 간의 간격임)
-                    .background(Color.yellow)
-                    .padding(.bottom, 30)
-//                    .offset(y: -30) // 이것도 가능
-                    
+//                    .aspectRatio(1, contentMode: .fit) // (1)
+                    .padding(.horizontal, 16) // 주의 - 위랑 순서 바뀌면 달라짐
+
+                Spacer()
+                    .frame(height: 24)
             }
+            .aspectRatio(1, contentMode: .fit) // 이게 있으면 (1) 없어도 자리 잘 잡음
+            .background(Color.green)
+            .cornerRadius(12)
+
+            Text("Hello Card Layout! Hello Card Layout! Hello Card Layout! Hello Card Layout!")
+                .multilineTextAlignment(.center)
+//                .lineLimit(1)
+                .lineLimit(2)
+                .frame(maxWidth: .infinity)
+                .background(Color.yellow.opacity(0.6))
+                .padding(.horizontal, 4)
+                .offset(y: -8)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.gray.opacity(0.2))
     }
-    
-//    var body: some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 12)
-//                .foregroundStyle(Color.gray)
-//                .aspectRatio(1.0, contentMode: .fit)
-//                .background(Color.yellow)
-//                .frame(width: 400, height: 400)
-//            
-//            Rectangle()
-//                .fill(.green)
-//                .frame(width: 300, height: 300)
-//                .padding(.vertical, 100) // 이게 있으면 Text가 왜 밑으로 밀려나지?
-//        }
-//        .overlay(alignment: .bottom) {
-//            Text("안녕하세요. 네모의 꿈입니다.")
-//                .font(.title)
-//                .lineLimit(2)
-//                .minimumScaleFactor(0.8)
-//                .offset(y: -10)
-//        }
-//    }
 }
 
 #Preview {
     CardItemView()
 }
-
