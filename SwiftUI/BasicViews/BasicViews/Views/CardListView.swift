@@ -3,17 +3,24 @@ import SwiftUI
 struct CardListView: View {
     
     var body: some View {
-        VStack(spacing: 50) {
+        VStack(spacing: 30) {
             CardItemView()
-                .frame(width: 100) // 아래와 동일 (내부적으로 1:1 ratio 설정해서)
-//                .frame(height: 100) // Text가 양옆으로 늘어남 -> ???: superview 보다 튀어나가지 않게 어떻게 설정하지? (clipsToBounds 같은거)
 //                .frame(width: 100, height: 100)
             
-            CardItemView()
-                .frame(width: 200)
+            // 같아 보이지만 사실 세로로 gray bg가 노출됨. 즉 ItemView가 늘어남
+            // -> ItemView 자체에 1:1을 설정해서 해결
+//                .frame(width: 100)
+            
+            // Text가 양옆으로 늘어남. 이것도 가로로 gray bg가 노출됨. 즉 ItemView가 늘어남
+            // -> ItemView 자체에 1:1을 설정해서 해결
+                .frame(height: 100)
+            
             
             CardItemView()
-                .frame(width: 300)
+                .frame(width: 200, height: 200)
+            
+            CardItemView()
+                .frame(width: 300, height: 300)
         }
     }
 }
