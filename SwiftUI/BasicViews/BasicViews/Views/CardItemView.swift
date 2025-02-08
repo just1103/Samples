@@ -27,7 +27,6 @@ struct CardItemView: View {
             }
             .aspectRatio(1, contentMode: .fit) // 이게 있으면 (1) 없어도 자리 잘 잡음
             .background(Color.green)
-            .cornerRadius(12)
 
             Text("Hello Card Layout! Hello Card Layout! Hello Card Layout! Hello Card Layout!")
                 .multilineTextAlignment(.center)
