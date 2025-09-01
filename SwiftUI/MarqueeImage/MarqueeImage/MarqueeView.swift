@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MarqueeView: View {
-    let imageName: String = "Shape"
+    let imageName: String
+    let duration: CGFloat
+    let vPadding: CGFloat
     
     // 시작 위치: 스크린 왼쪽이 이미지 왼쪽 끝
     @State private var offset: CGFloat = 0
@@ -54,7 +56,7 @@ struct MarqueeView: View {
                         // 이미지 왼쪽을 -delta만큼 이동 (애니메이션)
                         // -인 이유? : 화면이 오른쪽으로 이동하는 것처럼 보이려면 => 이미지를 왼쪽으로 이동시켜야 함)
                         // 끝 위치 : 스크린 오른쪽이 이미지 오른쪽 끝
-                        withAnimation(.easeInOut(duration: 4.0)) {
+                        withAnimation(.easeInOut(duration: duration)) {
                             offset = -delta
                         }
 //                        withAnimation(.linear(duration: 4.0).repeatForever(autoreverses: true)) {
@@ -69,12 +71,16 @@ struct MarqueeView: View {
             .background(Color.pink)
             
         }
-        .padding(.vertical, 100)
+        .padding(.vertical, vPadding)
         .ignoresSafeArea(.all)
-        .background(Color.yellow)
+//        .background(Color.yellow)
     }
 }
 
 #Preview {
-    MarqueeView()
+    MarqueeView(
+        imageName: "Shape",
+        duration: 4.0,
+        vPadding: 100
+    )
 }

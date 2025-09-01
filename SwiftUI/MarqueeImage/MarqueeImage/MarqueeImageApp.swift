@@ -11,7 +11,7 @@ import SwiftUI
 struct MarqueeImageApp: App {
     var body: some Scene {
         WindowGroup {
-            MarqueeView()
+            ParallaxMarqueeView()
         }
     }
 }
