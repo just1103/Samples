@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MarqueeView: View {
     let imageName: String = "Shape"
     
     // 시작 위치: 스크린 왼쪽이 이미지 왼쪽 끝
@@ -76,5 +76,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MarqueeView()
 }
