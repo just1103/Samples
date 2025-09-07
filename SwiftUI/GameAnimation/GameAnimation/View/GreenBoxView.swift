@@ -17,8 +17,6 @@ struct GreenBoxView: View {
             .fill(type.color)
             .frame(width: 100, height: 100)
             .overlay(BoxInnerContent())
-            .onTapGesture {
-                onTap()
-            }
+            .onTapGesture { onTap() }
     }
 }
