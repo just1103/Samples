@@ -13,6 +13,7 @@ import SwiftUI
 ///   3.2s: 좌우 반전
 ///   3.2~4.2s: 오른쪽으로 20px 이동
 struct RedBoxView: View {
+    let type: BoxType
     var onTap: () -> Void
     
     @State private var opacity: CGFloat = 0
@@ -26,7 +27,7 @@ struct RedBoxView: View {
     
     var body: some View {
         Rectangle()
-            .fill(.red)
+            .fill(type.color)
             .frame(width: 132, height: 100)
             .overlay(BoxInnerContent())
             .scaleEffect(x: flipped ? -1 : 1, y: 1, anchor: .center)

@@ -29,29 +29,27 @@ struct ContentView: View {
             if let currentType {
                 switch currentType {
                 case .red:
-                    RedBoxView {
+                    RedBoxView(type: .red, onTap: {
                         // 2. 빨간색 탭 시 노란색으로 전환 시작
 //                        withAnimation(.easeInOut(duration: 0.2)) {
-                            self.currentType = .yellow
+                        self.currentType = .yellow
 //                        }
-                    }
+                    })
 //                .transition(.opacity) // 초기 등장 전환
                     
                 case .yellow:
-                    YellowBoxView(
-                        onFinishedBounce: {
-                            // 2. "시간의 흐름"에 따라 바운스 종료 후 초록으로 전환
-//                            withAnimation(.easeInOut(duration: 0.2)) {
-                                self.currentType = .green
-//                            }
-                        }
-                    )
+                    YellowBoxView(type: .yellow, onFinishedBounce: {
+                        // 2. "시간의 흐름"에 따라 바운스 종료 후 초록으로 전환
+//                        withAnimation(.easeInOut(duration: 0.2)) {
+                        self.currentType = .green
+//                        }
+                    })
 //                .transition(.opacity)
                     
                 case .green:
-                    GreenBoxView {
+                    GreenBoxView(type: .green, onTap: {
                         self.currentType = .red
-                    }
+                    })
 //                .transition(.opacity)
                 }
             }

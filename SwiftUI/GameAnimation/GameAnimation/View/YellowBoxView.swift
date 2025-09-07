@@ -11,6 +11,7 @@ import SwiftUI
 /// - 0~0.1s : 50% 크기 & opacity 30% → 100% 크기 & opacity 100%
 /// - 0.1~0.7s : 90% ↔ 100% 를 번갈아가며 바운스
 struct YellowBoxView: View {
+    let type: BoxType
     var onFinishedBounce: () -> Void
     
     private let baseSize = CGSize(width: 88, height: 72)
@@ -19,7 +20,7 @@ struct YellowBoxView: View {
     
     var body: some View {
         Rectangle()
-            .fill(.yellow)
+            .fill(type.color)
             .frame(width: baseSize.width, height: baseSize.height)
             .overlay(BoxInnerContent())
             .opacity(opacity)

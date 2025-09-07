@@ -11,4 +11,12 @@ enum BoxType {
     case red
     case yellow
     case green
+    
+    var color: Color {
+        return switch self {
+        case .red: .red
+        case .yellow: .yellow
+        case .green: .green
+        }
+    }
 }
