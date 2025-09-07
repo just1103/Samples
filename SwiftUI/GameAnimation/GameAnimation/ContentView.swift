@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var current: BoxType? = nil
+    @State private var currentType: BoxType? = nil
     @State private var isReady = false
     
     var body: some View {
@@ -16,9 +16,9 @@ struct ContentView: View {
         .onAppear {
             // 1. 화면 준비 후 1초 뒤 빨간색 등장
             Task {
-                try? await Task.sleep(nanoseconds: 1_000_000_000)
-                withAnimation(.easeInOut(duration: 0.25)) {
-                    self.current = .red
+                // 1초 후에 rectangle 등장
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.currentType = .red
                 }
             }
         }
@@ -26,14 +26,14 @@ struct ContentView: View {
     
     private var boxView: some View {
         Group {
-            if let current {
-                switch current {
+            if let currentType {
+                switch currentType {
                 case .red:
                     RedBoxView {
                         // 2. 빨간색 탭 시 노란색으로 전환 시작
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            self.current = .yellow
-                        }
+//                        withAnimation(.easeInOut(duration: 0.2)) {
+                            self.currentType = .yellow
+//                        }
                     }
 //                .transition(.opacity) // 초기 등장 전환
                     
@@ -42,7 +42,7 @@ struct ContentView: View {
                         onFinishedBounce: {
                             // 2. "시간의 흐름"에 따라 바운스 종료 후 초록으로 전환
 //                            withAnimation(.easeInOut(duration: 0.2)) {
-                                self.current = .green
+                                self.currentType = .green
 //                            }
                         }
                     )
@@ -50,7 +50,7 @@ struct ContentView: View {
                     
                 case .green:
                     GreenBoxView {
-                        self.current = .red
+                        self.currentType = .red
                     }
 //                .transition(.opacity)
                 }

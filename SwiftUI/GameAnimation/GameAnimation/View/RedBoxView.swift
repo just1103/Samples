@@ -10,7 +10,7 @@ import SwiftUI
 /// - 초기 등장 기준:
 ///   0.0~0.1s: opacity 0→1 & 아래로 10px 내려오며 등장 (위에서 시작해 아래로)
 ///   0.2~1.2s: 왼쪽으로 20px 이동
-///   3.2s: 좌우 반전 (즉시)
+///   3.2s: 좌우 반전
 ///   3.2~4.2s: 오른쪽으로 20px 이동
 struct RedBoxView: View {
     var onTap: () -> Void
@@ -32,12 +32,10 @@ struct RedBoxView: View {
             .scaleEffect(x: flipped ? -1 : 1, y: 1, anchor: .center)
             .opacity(opacity)
             .offset(x: offsetX, y: offsetY)
-            .onTapGesture {
-                onTap()
-            }
+            .onTapGesture { onTap() }
             .onAppear { startLoop() }
             .onDisappear { stopLoop() }
-            .animation(.default, value: flipped)
+            .animation(.default, value: flipped) // 뒤집히는 효과 스무스하게 주려면 필요
     }
 
     private func startLoop() {

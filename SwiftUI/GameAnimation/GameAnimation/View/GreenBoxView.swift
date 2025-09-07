@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-/// 스펙:
+
 /// - 고정 100x100, 추가 애니메이션 없음
 struct GreenBoxView: View {
     var onTap: () -> Void
