@@ -8,10 +8,20 @@
 import SwiftUI
 
 class UserDefaultsManager: ObservableObject {
-    @AppStorage(Keys.languageOption.rawValue) var languageOption: String = ""
+    @AppStorage(Key.languageOption.rawValue) private(set) var languageOption: String = ""
     
-    private enum Keys: String {
+    enum Key: String {
         case languageOption
+    }
+    
+    func save(_ value: Any?, forKey key: Key) {
+        switch key {
+        case .languageOption:
+            guard let value = value as? String else {
+                return
+            }
+            self.languageOption = value
+        }
     }
     
     static let shared = UserDefaultsManager()

@@ -25,8 +25,8 @@ final class ContentViewModel: ObservableObject {
             guard selectedLanguage != oldValue else { return }
 
             Task { @MainActor in
-                let rawValue = selectedLanguage.rawValue
-                userDefaultsManager.languageOption = rawValue
+                let option = selectedLanguage.rawValue
+                userDefaultsManager.save(option, forKey: .languageOption)
             }
         }
     }
@@ -46,9 +46,9 @@ final class ContentViewModel: ObservableObject {
             let defaultOption = preferredSystemLanguageOption()
             self.selectedLanguage = defaultOption
 
-            let rawValue = defaultOption.rawValue
             Task { @MainActor in
-                userDefaultsManager.languageOption = rawValue
+                let option = defaultOption.rawValue
+                userDefaultsManager.save(option, forKey: .languageOption)
             }
         }
         isReady = true
