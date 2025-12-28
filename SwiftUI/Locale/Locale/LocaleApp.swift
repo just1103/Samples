@@ -10,9 +10,14 @@ import SwiftData
 
 @main
 struct LocaleApp: App {
+    // 컴파일/런타임 에러는 안나지만 App은 View life cycle과 달라서 부정확함
+    // AppRootView 추가하여 초기화 시점 분리 
+//    @Environment(\.modelContext) private var modelContext
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            AppSettingsEntity.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,9 +30,7 @@ struct LocaleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(
-                appSettings: AppSettings(selectedLanguage: nil)
-            )
+            AppRootView()
         }
         .modelContainer(sharedModelContainer)
     }

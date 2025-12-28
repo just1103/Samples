@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3656C6FE2F0108C1001B8A6F /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656C6FD2F0108C0001B8A6F /* AppRootView.swift */; };
 		36B278562F00D0FC00ECB7D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B2784F2F00D0FC00ECB7D3 /* Preview Assets.xcassets */; };
 		36B278572F00D0FC00ECB7D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B278512F00D0FC00ECB7D3 /* Assets.xcassets */; };
 		36B278582F00D0FC00ECB7D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B278522F00D0FC00ECB7D3 /* ContentView.swift */; };
-		36B278592F00D0FC00ECB7D3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B278532F00D0FC00ECB7D3 /* Item.swift */; };
+		36B278592F00D0FC00ECB7D3 /* AppSettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B278532F00D0FC00ECB7D3 /* AppSettingsEntity.swift */; };
 		36B2785A2F00D0FC00ECB7D3 /* LocaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B278542F00D0FC00ECB7D3 /* LocaleApp.swift */; };
 		36B278622F00D59100ECB7D3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 36B278612F00D59100ECB7D3 /* Localizable.xcstrings */; };
+		36B278642F00ED9C00ECB7D3 /* LanguageOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B278632F00ED9600ECB7D3 /* LanguageOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3656C6FD2F0108C0001B8A6F /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		36B2783C2F00D0C200ECB7D3 /* Locale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B2784F2F00D0FC00ECB7D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36B278512F00D0FC00ECB7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B278522F00D0FC00ECB7D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		36B278532F00D0FC00ECB7D3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		36B278532F00D0FC00ECB7D3 /* AppSettingsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsEntity.swift; sourceTree = "<group>"; };
 		36B278542F00D0FC00ECB7D3 /* LocaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleApp.swift; sourceTree = "<group>"; };
 		36B278612F00D59100ECB7D3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		36B278632F00ED9600ECB7D3 /* LanguageOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,10 @@
 			children = (
 				36B278502F00D0FC00ECB7D3 /* Preview Content */,
 				36B278542F00D0FC00ECB7D3 /* LocaleApp.swift */,
+				3656C6FD2F0108C0001B8A6F /* AppRootView.swift */,
 				36B278522F00D0FC00ECB7D3 /* ContentView.swift */,
-				36B278532F00D0FC00ECB7D3 /* Item.swift */,
+				36B278532F00D0FC00ECB7D3 /* AppSettingsEntity.swift */,
+				36B278632F00ED9600ECB7D3 /* LanguageOptions.swift */,
 				36B278612F00D59100ECB7D3 /* Localizable.xcstrings */,
 			);
 			path = Locale;
@@ -149,8 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B278582F00D0FC00ECB7D3 /* ContentView.swift in Sources */,
-				36B278592F00D0FC00ECB7D3 /* Item.swift in Sources */,
+				36B278592F00D0FC00ECB7D3 /* AppSettingsEntity.swift in Sources */,
+				36B278642F00ED9C00ECB7D3 /* LanguageOptions.swift in Sources */,
 				36B2785A2F00D0FC00ECB7D3 /* LocaleApp.swift in Sources */,
+				3656C6FE2F0108C1001B8A6F /* AppRootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

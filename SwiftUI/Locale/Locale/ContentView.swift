@@ -7,35 +7,22 @@
 
 import SwiftUI
 import SwiftData
-import Foundation
-
-enum LanguageOptions: String, CaseIterable {
-    case korean = "ko"
-    case english = "en"
-}
-
-class AppSettings: ObservableObject {
-    @Published var selectedLanguage: LanguageOptions
-    
-    init(selectedLanguage: LanguageOptions?) {
-        // 기본값 설정
-        // 유저의 preferred language가 "ko" 이면 "ko", 나머지이면 "en"
-        self.selectedLanguage = selectedLanguage ?? .english
-    }
-}
 
 /*
- - 설정 데이터(AppSettings)는 항상 1개만 유지
- - 앱을 최초 실행할 때, 시스템 설정의 preferred language를 가져와서 기본값으로 설정 및 로컬에 저장 (SwiftData)
+ - 앱을 최초 실행할 때, 시스템 설정의 preferred language를 가져와서 기본값으로 설정 및 로컬에 저장 (SwiftData, 디스크 저장)
  - picker에서 선택한 언어 옵션을 로컬에 저장 (SwiftData)
  - 언어 옵션이 바뀌면 화면 재갱신
+ - 앱을 재실행 하면, 시스템 설정과 상관없이 로컬에 저장한 값을 읽어와서 화면에 반영함
  */
 
 struct ContentView: View {
+    @Environment(\.locale) private var locale
+    
+    // SwiftData
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
-    
-    @ObservedObject var appSettings: AppSettings
+
+    @Binding var selectedLanguage: LanguageOptions
 
     var body: some View {
         NavigationSplitView {
@@ -49,7 +36,7 @@ struct ContentView: View {
                         
                         Spacer(minLength: 0)
                         
-                        Picker("", selection: $appSettings.selectedLanguage) {
+                        Picker("", selection: $selectedLanguage) {
                             ForEach(LanguageOptions.allCases, id: \.self) { option in
                                 Text(option.rawValue)
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -59,8 +46,10 @@ struct ContentView: View {
                     }
                 }
                 
-                // TODO: 이게
-                Text("안녕하세요")
+                Section(header: Text("현재 Locale")) {
+                    Text(locale.identifier)
+                    Text(Date.now, format: .dateTime.year().month().day().weekday())
+                }
                 
                 ForEach(items) { item in
                     NavigationLink {
@@ -84,6 +73,7 @@ struct ContentView: View {
         } detail: {
             Text("Select an item")
         }
+//        .environment(\.locale, Locale(identifier: selectedLanguage.rawValue)) // 밖에서만 걸어줘도 됨
     }
 
     private func addItem() {
@@ -103,8 +93,15 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(
-        appSettings: AppSettings(selectedLanguage: nil)
-    )
-    .modelContainer(for: Item.self, inMemory: true)
+    PreviewContainerView()
+        .modelContainer(for: [Item.self, AppSettingsEntity.self], inMemory: true)
+}
+
+private struct PreviewContainerView: View {
+    @State private var selectedLanguage: LanguageOptions = .english
+
+    var body: some View {
+        ContentView(selectedLanguage: $selectedLanguage)
+            .environment(\.locale, Locale(identifier: selectedLanguage.rawValue))
+    }
 }
