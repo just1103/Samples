@@ -22,6 +22,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
+    // AppRootView에서 받아온 값
     @Binding var selectedLanguage: LanguageOptions
 
     var body: some View {
@@ -47,6 +48,7 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("현재 Locale")) {
+                    Text("안녕하세요")
                     Text(locale.identifier)
                     Text(Date.now, format: .dateTime.year().month().day().weekday())
                 }

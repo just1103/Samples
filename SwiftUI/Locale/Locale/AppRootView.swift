@@ -13,28 +13,38 @@ struct AppRootView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var appSettingsRecords: [AppSettingsEntity]
 
-    @State private var selectedLanguage: LanguageOptions = .english
+    @State private var selectedLanguage: LanguageOptions = .english // 무의미한 기본값
+    @State private var isReady = false
 
     var body: some View {
-        ContentView(selectedLanguage: languageBinding)
-            .environment(\.locale, Locale(identifier: selectedLanguage.rawValue))
-            .task {
-                loadAppSettings()
+        Group {
+            if isReady {
+                ContentView(selectedLanguage: languageBinding)
+            } else {
+                ProgressView()
             }
+        }
+        .environment(\.locale, Locale(identifier: selectedLanguage.rawValue))
+        .task {
+            loadAppSettingsIfNeeded()
+            isReady = true
+        }
     }
 
-    // ???
+    // 하위 뷰에 넘겨줘야해서 Binding 타입으로 정의
+    // viewModel @Published로 분리해도 됨
     private var languageBinding: Binding<LanguageOptions> {
         Binding(
             get: { selectedLanguage },
             set: { newValue in
                 selectedLanguage = newValue
                 saveSelectedLanguage(newValue)
+                try? modelContext.save()
             }
         )
     }
 
-    private func loadAppSettings() {
+    private func loadAppSettingsIfNeeded() {
         // 항상 1개만 유지
         if appSettingsRecords.count > 1 {
             for record in appSettingsRecords.dropFirst() {
@@ -49,6 +59,7 @@ struct AppRootView: View {
             let defaultLanguage = preferredSystemLanguageOption()
             modelContext.insert(AppSettingsEntity(selectedLanguageCode: defaultLanguage.rawValue))
             selectedLanguage = defaultLanguage
+            try? modelContext.save()
         }
     }
 
@@ -66,6 +77,8 @@ struct AppRootView: View {
                 modelContext.delete(record)
             }
         }
+
+        try? modelContext.save()
     }
 
     private func preferredSystemLanguageOption() -> LanguageOptions {

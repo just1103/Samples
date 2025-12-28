@@ -53,7 +53,6 @@
       }
     },
     "안녕하세요" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
