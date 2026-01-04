@@ -1,11 +1,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.colorScheme) private var systemColorScheme 
+    @Environment(\.colorScheme) private var systemColorScheme
     @StateObject var viewModel: ContentViewModel
 
     private var colors: ColorToken {
-        viewModel.colors(systemColorScheme: systemColorScheme)
+        ColorToken.colors(
+            themeOption: viewModel.selectedTheme,
+            systemColorScheme: systemColorScheme
+        )
     }
     
     var body: some View {

@@ -1,11 +1,5 @@
 import SwiftUI
 
-// 현재 화면에 나타낼 테마
-enum DisplayTheme {
-    case light
-    case dark
-}
-
 struct ColorToken {
     let backgroundPrimary: Color
     let backgroundSecondary: Color
@@ -13,23 +7,29 @@ struct ColorToken {
     let textSecondary: Color
     let divider: Color
 
-    static func theme(_ displayTheme: DisplayTheme) -> ColorToken {
+    static func colors(
+        themeOption: ThemeOption,
+        systemColorScheme: ColorScheme
+    ) -> ColorToken {
+        let currentDisplayTheme = themeOption.displayTheme(systemColorScheme: systemColorScheme)
+        return colors(currentDisplayTheme)
+    }
+    
+    // color 1:1 매칭
+    private static func colors(_ displayTheme: DisplayTheme) -> ColorToken {
         return switch displayTheme {
-        case .light: light
-        case .dark: dark
+        case .light: lightModeColors
+        case .dark: darkModeColors
         }
     }
-
-    // 1:1 매칭
-    private static let light = ColorToken(
+    private static let lightModeColors = ColorToken(
         backgroundPrimary: Color(hex: "#FFFFFF"),
         backgroundSecondary: Color(hex: "#F2F2F7"),
         textPrimary: Color(hex: "#111111"),
         textSecondary: Color(hex: "#6B6B6B"),
         divider: Color(hex: "#E5E5EA")
     )
-
-    private static let dark = ColorToken(
+    private static let darkModeColors = ColorToken(
         backgroundPrimary: Color(hex: "#111111"),
         backgroundSecondary: Color(hex: "#1C1C1E"),
         textPrimary: Color(hex: "#FFFFFF"),
@@ -38,7 +38,15 @@ struct ColorToken {
     )
 }
 
-// 선택 가능한 옵션 
+// MARK: - DisplayTheme
+// 현재 화면에 나타낼 테마
+enum DisplayTheme {
+    case light
+    case dark
+}
+
+// MARK: - ThemeOption
+// 선택 가능한 옵션
 enum ThemeOption: String, CaseIterable {
     case system
     case fixedDark
@@ -54,8 +62,17 @@ enum ThemeOption: String, CaseIterable {
             return "다크 모드"
         }
     }
+
+    func displayTheme(systemColorScheme: ColorScheme) -> DisplayTheme {
+        return switch self {
+        case .system: systemColorScheme == .dark ? .dark : .light
+        case .fixedLight: .light
+        case .fixedDark: .dark
+        }
+    }
 }
 
+// MARK: - Color+
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

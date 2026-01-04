@@ -16,17 +16,6 @@ final class ContentViewModel: ObservableObject {
         case .fixedDark: .dark
         }
     }
-    
-    func colors(systemColorScheme: ColorScheme) -> ColorToken {
-        let displayTheme: DisplayTheme = {
-            return switch selectedTheme {
-            case .system: systemColorScheme == .dark ? .dark : .light
-            case .fixedLight: .light
-            case .fixedDark: .dark
-            }
-        }()
-        return ColorToken.theme(displayTheme)
-    }
 
     init() {
         let savedTheme = userDefaultsManager.theme
@@ -38,6 +27,7 @@ final class ContentViewModel: ObservableObject {
     }
 }
 
+// MARK: - UserDefaultsManager
 final class UserDefaultsManager: ObservableObject {
     enum Key: String {
         case theme
