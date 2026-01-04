@@ -1,17 +1,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.colorScheme) private var systemColorScheme
+    @Environment(\.colorToken) private var colors // custom env
+//    @Environment(\.colorScheme) private var systemColorScheme // system env
     
-//    @StateObject private var viewModel: ContentViewModel // 앱 최상위에서 ThemeStore 들고 있도록 개선
-    @EnvironmentObject private var themeStore: ThemeStore
-
-    private var colors: ColorToken {
-        ColorToken.colors(
-            themeOption: themeStore.selectedTheme,
-            systemColorScheme: systemColorScheme
-        )
-    }
+    // 화면마다 colors 정의 불필요
+//    private var colors: ColorToken {
+//        ColorToken.colors(
+//            themeOption: themeStore.selectedTheme,
+//            systemColorScheme: systemColorScheme
+//        )
+//    }
+    
+    @EnvironmentObject private var themeStore: ThemeStore // 앱 최상위에서 ThemeStore 들고 있도록 개선
+//    @StateObject private var viewModel: ContentViewModel
 
     var body: some View {
         List {
@@ -35,7 +37,6 @@ struct ContentView: View {
                 .pickerStyle(.menu)
             }
         }
-        .listRowBackground(colors.backgroundPrimary)
 //        .preferredColorScheme(viewModel.preferredColorScheme) // system dynamic color를 사용중이면 필요함 -> 상위 뷰에서 설정
     }
 }
