@@ -60,7 +60,18 @@ extension EnvironmentValues {
 
 /*
  
- custom environment 방식의 단점
+ # custom environment 동작 구조
+ 
+ SwiftUI의 전역 설정 가방(Environment)에 ColorToken이라는 값을 넣고, 어디서든 @Environment(\.colorToken)으로 꺼내 쓰게 만든다.
+ 
+ - EnvironmentKey = 사물함 번호(키 타입, 저장할 데이터의 타입)
+ - defaultValue = 사물함이 비어있을 때 대신 꺼낼 기본 물건
+ - EnvironmentValues.colorToken = 사물함 번호를 ‘colorToken’이라는 손잡이로 만든 것
+ - .environment(\.colorToken, value) = 사물함에 실제 물건을 넣는 행위
+ - @Environment(\.colorToken) = 사물함에서 물건을 꺼내는 행위
+ 
+ 
+ # custom environment 방식의 단점
  
  1) 의존성이 “암묵적”이 됨
  뷰 코드만 보면 colors가 어디서 주입되는지 바로 안 보일 수 있어요.
