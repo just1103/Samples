@@ -14,11 +14,9 @@ struct ColorToken {
     let divider: Color
 
     static func theme(_ displayTheme: DisplayTheme) -> ColorToken {
-        switch displayTheme {
-        case .light:
-            return light
-        case .dark:
-            return dark
+        return switch displayTheme {
+        case .light: light
+        case .dark: dark
         }
     }
 
@@ -40,6 +38,7 @@ struct ColorToken {
     )
 }
 
+// 선택 가능한 옵션 
 enum ThemeOption: String, CaseIterable {
     case system
     case fixedDark
@@ -58,23 +57,6 @@ enum ThemeOption: String, CaseIterable {
 }
 
 extension Color {
-    static var color111111: Color { Color(hex: "#111111") } // black
-    
-    static var color262626: Color { Color(hex: "#262626") }
-    
-    static var color333333: Color { Color(hex: "#333333") }
-    static var color3C3C43: Color { Color(hex: "#3C3C43") }
-    
-    static var color666666: Color { Color(hex: "#666666") }
-    
-    static var color999999: Color { Color(hex: "#999999") }
-    
-    static var colorE1E1E1: Color { Color(hex: "#E1E1E1") }
-    static var colorEEEEF0: Color { Color(hex: "#EEEEF0") }
-    
-    static var colorF5F5F5: Color { Color(hex: "#F5F5F5") }
-    static var colorFFFFFF: Color { Color(hex: "#FFFFFF") } // white
-    
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt64()

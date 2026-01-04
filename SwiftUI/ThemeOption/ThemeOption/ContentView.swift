@@ -4,29 +4,17 @@ struct ContentView: View {
     @Environment(\.colorScheme) private var systemColorScheme 
     @StateObject var viewModel: ContentViewModel
 
-    private var displayTheme: DisplayTheme {
-        return switch viewModel.selectedTheme {
-        case .system: systemColorScheme == .dark ? .dark : .light
-        case .fixedLight: .light
-        case .fixedDark: .dark
-        }
-    }
-
     private var colors: ColorToken {
-        ColorToken.theme(displayTheme)
+        viewModel.colors(systemColorScheme: systemColorScheme)
     }
     
-    private var preferredColorScheme: ColorScheme? {
-        viewModel.preferredColorScheme
-    }
-
     var body: some View {
         List {
             HStack(spacing: 0) {
                 Image(systemName: "moon.fill")
                     .foregroundStyle(colors.textPrimary)
 
-                Text("화면 모드")
+                Text("테마")
                     .foregroundStyle(colors.textPrimary)
                     .padding(.leading, 14)
 
@@ -43,7 +31,7 @@ struct ContentView: View {
             }
             .listRowBackground(colors.backgroundPrimary)
         }
-        .preferredColorScheme(preferredColorScheme) // viewModel.preferredColorScheme 바로 할당 불가
+        .preferredColorScheme(viewModel.preferredColorScheme) // system dynamic color를 사용중이라면 필요함
     }
 }
 
