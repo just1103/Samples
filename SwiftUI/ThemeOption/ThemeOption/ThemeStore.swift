@@ -1,6 +1,7 @@
 import SwiftUI
 
-final class ContentViewModel: ObservableObject {
+@MainActor
+final class ThemeStore: ObservableObject {
     private let userDefaultsManager = UserDefaultsManager.shared
 
     @Published var selectedTheme: ThemeOption = .system {
@@ -16,7 +17,7 @@ final class ContentViewModel: ObservableObject {
         case .fixedDark: .dark
         }
     }
-
+    
     init() {
         let savedTheme = userDefaultsManager.theme
         selectedTheme = ThemeOption(rawValue: savedTheme) ?? .system

@@ -2,15 +2,17 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.colorScheme) private var systemColorScheme
-    @StateObject var viewModel: ContentViewModel
+    
+//    @StateObject private var viewModel: ContentViewModel // 앱 최상위에서 ThemeStore 들고 있도록 개선
+    @EnvironmentObject private var themeStore: ThemeStore
 
     private var colors: ColorToken {
         ColorToken.colors(
-            themeOption: viewModel.selectedTheme,
+            themeOption: themeStore.selectedTheme,
             systemColorScheme: systemColorScheme
         )
     }
-    
+
     var body: some View {
         List {
             HStack(spacing: 0) {
@@ -23,7 +25,7 @@ struct ContentView: View {
 
                 Spacer(minLength: 0)
 
-                Picker("", selection: $viewModel.selectedTheme) {
+                Picker("", selection: $themeStore.selectedTheme) {
                     ForEach(ThemeOption.allCases, id: \.self) { option in
                         Text(option.titleText)
                             .foregroundStyle(colors.textPrimary)
@@ -34,10 +36,11 @@ struct ContentView: View {
             }
         }
         .listRowBackground(colors.backgroundPrimary)
-        .preferredColorScheme(viewModel.preferredColorScheme) // system dynamic color를 사용중이라면 필요함
+//        .preferredColorScheme(viewModel.preferredColorScheme) // system dynamic color를 사용중이면 필요함 -> 상위 뷰에서 설정
     }
 }
 
 #Preview {
-    ContentView(viewModel: ContentViewModel())
+    ContentView()
+        .environmentObject(ThemeStore())
 }
