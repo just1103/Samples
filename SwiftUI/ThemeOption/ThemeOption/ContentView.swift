@@ -29,7 +29,55 @@ struct ContentView: View {
 }
 
 class ContentViewModel: ObservableObject {
+    private let userDefaultsManager = UserDefaultsManager.shared
     @Published var selectedTheme: ThemeOption = .system
+    
+    init() {
+        checkThemeOption()
+    }
+    
+    private func checkThemeOption() {
+        guard !userDefaultsManager.theme.isEmpty,
+              let selectedOption = ThemeOption(rawValue: userDefaultsManager.theme) else {
+            self.selectedTheme = .system
+            userDefaultsManager.save(ThemeOption.system.rawValue, forKey: .theme)
+            return
+        }
+        self.selectedTheme = selectedOption
+    }
+}
+
+class UserDefaultsManager: ObservableObject {
+    enum Key: String {
+        case theme
+    }
+    
+    @AppStorage(Key.theme.rawValue) private(set) var theme: String = ""
+    
+    var isFixedLightMode: Bool {
+        theme == ThemeOption.fixedLight.rawValue
+    }
+
+    var isFixedDarkMode: Bool {
+        theme == ThemeOption.fixedDark.rawValue
+    }
+
+    var isSystemMode: Bool {
+        theme == ThemeOption.system.rawValue
+    }
+    
+    func save(_ value: Any?, forKey key: Key) {
+        switch key {
+        case .theme:
+            guard let value = value as? String else {
+                return
+            }
+            self.theme = value
+        }
+    }
+    
+    static let shared = UserDefaultsManager()
+    private init() {}
 }
 
 enum ThemeOption: String, CaseIterable {
@@ -39,12 +87,9 @@ enum ThemeOption: String, CaseIterable {
     
     var titleText: LocalizedStringKey {
         return switch self {
-        case .system:
-            "시스템 모드"
-        case .fixedLight:
-            "라이트 모드"
-        case .fixedDark:
-            "다크 모드"
+        case .system: "시스템 모드"
+        case .fixedLight: "라이트 모드"
+        case .fixedDark: "다크 모드"
         }
     }
 }
