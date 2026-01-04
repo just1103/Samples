@@ -11,6 +11,8 @@
 		362C75CB2F0A17590062F9BA /* ThemeOptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362C75C82F0A17590062F9BA /* ThemeOptionApp.swift */; };
 		362C75CC2F0A17590062F9BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362C75C42F0A17590062F9BA /* Assets.xcassets */; };
 		362C75CD2F0A17590062F9BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362C75C52F0A17590062F9BA /* Preview Assets.xcassets */; };
+		36E0BD162F0A3F39009C5553 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0BD152F0A3F37009C5553 /* ContentViewModel.swift */; };
+		36E0BD182F0A4346009C5553 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E0BD172F0A4343009C5553 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		362C75C52F0A17590062F9BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		362C75C72F0A17590062F9BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		362C75C82F0A17590062F9BA /* ThemeOptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeOptionApp.swift; sourceTree = "<group>"; };
+		36E0BD152F0A3F37009C5553 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		36E0BD172F0A4343009C5553 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				362C75C62F0A17590062F9BA /* Preview Content */,
-				362C75C72F0A17590062F9BA /* ContentView.swift */,
 				362C75C82F0A17590062F9BA /* ThemeOptionApp.swift */,
+				362C75C72F0A17590062F9BA /* ContentView.swift */,
+				36E0BD152F0A3F37009C5553 /* ContentViewModel.swift */,
+				36E0BD172F0A4343009C5553 /* Colors.swift */,
 			);
 			path = ThemeOption;
 			sourceTree = "<group>";
@@ -141,7 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				362C75CA2F0A17590062F9BA /* ContentView.swift in Sources */,
+				36E0BD182F0A4346009C5553 /* Colors.swift in Sources */,
 				362C75CB2F0A17590062F9BA /* ThemeOptionApp.swift in Sources */,
+				36E0BD162F0A3F39009C5553 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
