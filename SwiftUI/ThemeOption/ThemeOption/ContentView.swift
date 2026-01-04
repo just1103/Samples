@@ -32,8 +32,8 @@ struct ContentView: View {
                 }
                 .pickerStyle(.menu)
             }
-            .listRowBackground(colors.backgroundPrimary)
         }
+        .listRowBackground(colors.backgroundPrimary)
         .preferredColorScheme(viewModel.preferredColorScheme) // system dynamic color를 사용중이라면 필요함
     }
 }
